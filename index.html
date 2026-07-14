@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>مصنع مخبوزات جوري — توريد جملة للمطاعم والمقاهي والبقالات بالرياض</title>
-<meta name="description" content="مصنع مخبوزات جوري الحديث بالرياض يوفر توريد جملة يومي للمطاعم والمقاهي والبقالات: تورتيلا، خبز برجر، ساندويتش رول، خبز توست وبقسماط. أسعار جملة منافسة وجودة عالية.">
+<meta name="description" content="جوري.. شريكك الجديد في قطاع المخبوزات. توريد جملة للمطاعم، الإعاشة، البقالات والأسواق: تورتيلا، خبز برجر، ساندويتش رول وخبز توست. إنتاج يتجاوز 10,000 قطعة يوميًا، أسعار جملة منافسة، وأسطول يغطي الرياض والقصيم والمنطقة الشرقية.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -23,6 +23,8 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
+  #hero, #products, #contact{scroll-margin-top:216px;}
+  @media (max-width:600px){ #hero, #products, #contact{scroll-margin-top:164px;} }
   body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.6;}
   h1,h2,h3,.display{font-family:'Lalezar',sans-serif;font-weight:400;letter-spacing:.5px;}
   a{text-decoration:none;color:inherit;}
@@ -53,10 +55,10 @@
   .topbar{position:fixed;top:0;right:0;left:0;z-index:200;display:flex;align-items:center;justify-content:center;
     padding:8px 5%;background:rgba(251,246,236,.92);backdrop-filter:blur(8px);box-shadow:0 2px 16px rgba(41,20,16,.08);}
   .topbar-logo-link{display:flex;align-items:center;}
-  .topbar .logo{height:100px;width:auto;}
+  .topbar .logo{height:200px;width:auto;}
 
   /* ---------- hero ---------- */
-  .hero{min-height:100vh;display:flex;align-items:center;padding:150px 0 90px;
+  .hero{min-height:100vh;display:flex;align-items:center;padding:230px 0 90px;
     background:
       linear-gradient(115deg, rgba(80,11,18,.94) 0%, rgba(111,15,24,.86) 38%, rgba(194,27,46,.55) 68%, rgba(80,11,18,.75) 100%),
       url('assets/factory.webp') center/cover no-repeat;
@@ -66,16 +68,32 @@
   .hero h1{color:var(--white);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.25;margin-bottom:22px;text-shadow:0 4px 18px rgba(0,0,0,.25);}
   .hero h1 span{color:var(--gold-light);}
   .hero p.lead{color:rgba(255,255,255,.92);font-size:clamp(1.02rem,2vw,1.22rem);margin-bottom:30px;max-width:640px;}
-  .hero-features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px;}
-  .hero-feat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:16px 14px;
-    backdrop-filter:blur(6px);}
-  .hero-feat svg{width:26px;height:26px;color:var(--gold-light);margin-bottom:10px;}
-  .hero-feat b{display:block;color:var(--white);font-size:.98rem;font-weight:800;margin-bottom:3px;}
-  .hero-feat span{color:rgba(255,255,255,.8);font-size:.82rem;}
-  .hero-badge{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--red-deep);
-    font-weight:800;padding:11px 20px;border-radius:99px;margin-bottom:26px;font-size:.92rem;}
-  .hero-badge svg{width:20px;height:20px;}
-  @media (max-width:720px){ .hero-features{grid-template-columns:1fr;} }
+  .hero-audience{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
+  .hero-audience span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.22);color:var(--white);font-weight:700;font-size:.86rem;padding:9px 16px;border-radius:99px;}
+  .hero-audience svg{width:15px;height:15px;background:var(--gold);color:var(--red-deep);border-radius:50%;padding:3px;flex-shrink:0;}
+
+  /* ---------- fleet coverage ---------- */
+  .coverage{padding:80px 0;background:var(--red-deep);color:var(--white);text-align:center;}
+  .coverage .eyebrow{background:rgba(255,255,255,.14);color:var(--gold-light);}
+  .coverage h2{color:var(--white);font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:14px;}
+  .coverage p.sub{color:rgba(255,255,255,.8);max-width:600px;margin:0 auto 44px;}
+  .coverage-truck{width:64px;height:64px;margin:0 auto 26px;background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .coverage-truck svg{width:30px;height:30px;color:var(--gold-light);}
+  .coverage-route{display:flex;align-items:center;justify-content:center;max-width:760px;margin:0 auto;flex-wrap:wrap;}
+  .coverage-city{display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 22px;}
+  .coverage-city .pin{width:54px;height:54px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;}
+  .coverage-city .pin svg{width:26px;height:26px;color:var(--red-deep);}
+  .coverage-city b{font-size:1.05rem;font-weight:800;}
+  .coverage-city span{color:rgba(255,255,255,.7);font-size:.8rem;}
+  .coverage-line{flex:1;min-width:40px;height:2px;
+    background:repeating-linear-gradient(90deg, rgba(255,255,255,.5) 0 8px, transparent 8px 16px);}
+  @media (max-width:720px){
+    .coverage-route{flex-direction:column;gap:22px;}
+    .coverage-line{width:2px;height:30px;flex:none;
+      background:repeating-linear-gradient(180deg, rgba(255,255,255,.5) 0 8px, transparent 8px 16px);}
+  }
 
   /* ---------- trust strip ---------- */
   .trust{background:var(--red-deep);padding:22px 0;}
@@ -88,6 +106,7 @@
   .sec-head{text-align:center;max-width:680px;margin:0 auto 46px;}
   .sec-head h2{font-size:clamp(1.9rem,4vw,2.6rem);color:var(--red-deep);margin-bottom:14px;}
   .sec-head p{color:var(--ink-soft);font-size:1.02rem;}
+  .sec-head .btn{margin-top:18px;}
 
   /* ---------- why us ---------- */
   .why{padding:90px 0 70px;}
@@ -153,7 +172,7 @@
   footer .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-bottom:24px;
     border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:20px;}
   footer .foot-brand{display:flex;align-items:center;gap:12px;}
-  footer .foot-brand img{height:68px;filter:brightness(0) invert(1);opacity:.9;}
+  footer .foot-brand img{height:136px;filter:brightness(0) invert(1);opacity:.9;}
   footer address{font-style:normal;line-height:1.9;}
   footer .copyright{text-align:center;color:rgba(255,255,255,.45);font-size:.78rem;}
 
@@ -169,18 +188,14 @@
 
     /* topbar */
     .topbar{padding:10px 18px;}
-    .topbar .logo{height:72px;}
+    .topbar .logo{height:144px;}
 
     /* hero */
-    .hero{padding:112px 0 56px;min-height:0;}
-    .hero-badge{padding:9px 16px;font-size:.8rem;margin-bottom:18px;}
+    .hero{padding:172px 0 56px;min-height:0;}
     .hero h1{font-size:1.9rem;margin-bottom:16px;}
     .hero p.lead{font-size:.98rem;margin-bottom:22px;}
-    .hero-features{gap:10px;margin-bottom:26px;}
-    .hero-feat{padding:14px;display:flex;align-items:center;gap:12px;text-align:right;}
-    .hero-feat svg{margin-bottom:0;flex-shrink:0;}
-    .hero-feat b{font-size:.92rem;}
-    .hero-feat span{font-size:.78rem;}
+    .hero-audience{gap:8px;margin-bottom:22px;}
+    .hero-audience span{font-size:.78rem;padding:7px 12px;}
 
     /* generic cta rows stack full-width for easy tapping */
     .cta-row{flex-direction:column;gap:12px;}
@@ -199,6 +214,10 @@
     .why{padding:56px 0 36px;}
     .why-grid{gap:16px;}
     .why-card{padding:26px 20px;}
+
+    .coverage{padding:52px 0;}
+    .coverage p.sub{margin-bottom:32px;}
+    .coverage-truck{width:56px;height:56px;margin-bottom:22px;}
 
     .products{padding:8px 0 56px;}
     .cat-block{margin-bottom:36px;}
@@ -241,39 +260,36 @@
 <section class="hero" id="hero">
   <div class="wrap">
     <div class="hero-inner reveal in">
-      <div class="hero-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
-        جديد بالرياض
-      </div>
-      <h1>مصنع مخبوزات <span>جوري</span> الحديث لتوريد الجملة!</h1>
-      <p class="lead">إلى أصحاب المطاعم، المقاهي، والبقالات.. نلبي كافة احتياجاتكم بكميات ضخمة وأسعار منافسة جداً، مع توصيل منتظم داخل الرياض.</p>
+      <h1><span>جوري</span>.. شريكك الجديد في قطاع المخبوزات</h1>
+      <p class="lead">نخبز أكثر من <b>10,000 قطعة يوميًا</b> بأسعار جملة منافسة وتوريد منتظم بكميات تناسب احتياجكم، مع أسطول توصيل يغطي الرياض والقصيم والمنطقة الشرقية.</p>
 
-      <div class="hero-features">
-        <div class="hero-feat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-          <b>إنتاج ضخم</b>
-          <span>جاهزية تامة لتغطية احتياجاتكم اليومية دون انقطاع</span>
-        </div>
-        <div class="hero-feat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9.5c0-1-1-2-3-2s-3 1-3 2 1 1.5 3 2 3 1 3 2-1 2-3 2-3-1-3-2"/><path d="M12 6v2M12 16v2"/></svg>
-          <b>سعر منافس</b>
-          <span>أسعار جملة خاصة ترفع من هامش ربحك</span>
-        </div>
-        <div class="hero-feat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
-          <b>جودة عالية</b>
-          <span>خبز طازج يُحضر يومياً بأعلى المعايير</span>
-        </div>
+      <div class="hero-audience">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          المطاعم
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          إعاشة وتموين
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          البقالات
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          الأسواق
+        </span>
       </div>
 
       <div class="cta-row">
-        <a class="btn btn-whatsapp btn-lg" href="https://wa.me/966550770645?text=مرحباً%2C%20أرغب%20بطلب%20عينات%20مجانية%20من%20منتجات%20جوري" target="_blank" rel="noopener">
+        <a class="btn btn-whatsapp btn-lg" href="https://wa.me/966550770645?text=مرحباً%2C%20أرغب%20بالتواصل%20مع%20قسم%20المبيعات" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.99.585 3.842 1.591 5.398L2 22l4.735-1.562A9.953 9.953 0 0 0 12.001 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.2a8.174 8.174 0 0 1-4.396-1.276l-.315-.19-3.11 1.027 1.05-3.033-.205-.312A8.173 8.173 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.2 3.678 8.2 8.2 0 4.522-3.679 8.2-8.2 8.2z"/></svg>
-          اطلب عيناتك المجانية الآن
+          تواصل مع قسم المبيعات
         </a>
-        <a class="btn btn-outline-light btn-lg" href="tel:+966550770645">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          966 55 077 0645+
+        <a class="btn btn-outline-light btn-lg" href="#products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 20l-3-3 3-3"/></svg>
+          قائمة المنتجات
         </a>
       </div>
     </div>
@@ -285,19 +301,19 @@
   <div class="wrap">
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-      <b>مصنع حديث بالرياض</b>
+      <b>+10,000 قطعة يوميًا</b>
     </div>
     <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3l-9 9M9 21H2v-7M3 21l9-9"/></svg>
-      <b>توريد جملة يومي</b>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9.5c0-1-1-2-3-2s-3 1-3 2 1 1.5 3 2 3 1 3 2-1 2-3 2-3-1-3-2"/><path d="M12 6v2M12 16v2"/></svg>
+      <b>أسعار جملة منافسة</b>
     </div>
     <div class="trust-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
-      <b>توصيل منتظم داخل الرياض</b>
+      <b>توريد منتظم يناسب احتياجكم</b>
     </div>
     <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      <b>15+ منتج مخبوزات</b>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <b>تغطية 3 مناطق رئيسية</b>
     </div>
   </div>
 </div>
@@ -316,8 +332,8 @@
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
-        <h3>إنتاج ضخم بلا انقطاع</h3>
-        <p>طاقة إنتاجية عالية داخل مصنعنا الحديث بالرياض تضمن تغطية طلباتكم اليومية مهما زاد حجمها.</p>
+        <h3>إنتاج ضخم يوميًا</h3>
+        <p>نخبز أكثر من 10,000 قطعة يوميًا داخل مصنعنا الحديث بالرياض لضمان تغطية طلباتكم مهما زاد حجمها.</p>
       </div>
       <div class="why-card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9.5c0-1-1-2-3-2s-3 1-3 2 1 1.5 3 2 3 1 3 2-1 2-3 2-3-1-3-2"/><path d="M12 6v2M12 16v2"/></svg></div>
@@ -326,8 +342,44 @@
       </div>
       <div class="why-card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></div>
-        <h3>توصيل منتظم بالرياض</h3>
+        <h3>توريد منتظم</h3>
         <p>جدولة توصيل ثابتة بكميات تناسب احتياجكم، لضمان توفر المنتج في منشأتكم دائماً.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLEET COVERAGE ============ -->
+<section class="coverage">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
+        تغطية واسعة
+      </div>
+      <h2>أسطولنا يغطي 3 مناطق رئيسية</h2>
+      <p class="sub">توصيل منتظم بأسطولنا الخاص إلى عملائنا في المطاعم، الإعاشة، البقالات والأسواق داخل هذه المناطق.</p>
+      <div class="coverage-truck">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
+      </div>
+      <div class="coverage-route">
+        <div class="coverage-city">
+          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <b>الرياض</b>
+          <span>توصيل مباشر</span>
+        </div>
+        <div class="coverage-line"></div>
+        <div class="coverage-city">
+          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <b>القصيم</b>
+          <span>توصيل مباشر</span>
+        </div>
+        <div class="coverage-line"></div>
+        <div class="coverage-city">
+          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <b>المنطقة الشرقية</b>
+          <span>توصيل مباشر</span>
+        </div>
       </div>
     </div>
   </div>
@@ -343,6 +395,10 @@
       </div>
       <h2>تشكيلة متكاملة تغطي كل احتياجاتكم</h2>
       <p>جميع منتجاتنا متوفرة بأحجام وقطاعات تلبي احتياج الأسواق والمطاعم وقطاع الإعاشة على حدٍ سواء.</p>
+      <a class="btn btn-primary" href="https://wa.me/966550770645?text=مرحباً%2C%20أرغب%20بالتواصل%20مع%20قسم%20المبيعات%20بخصوص%20المنتجات" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.99.585 3.842 1.591 5.398L2 22l4.735-1.562A9.953 9.953 0 0 0 12.001 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.2a8.174 8.174 0 0 1-4.396-1.276l-.315-.19-3.11 1.027 1.05-3.033-.205-.312A8.173 8.173 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.2 3.678 8.2 8.2 0 4.522-3.679 8.2-8.2 8.2z"/></svg>
+        تواصل مع قسم المبيعات
+      </a>
     </div>
 
     <!-- التورتيلا -->
@@ -529,50 +585,6 @@
             <div class="prod-tags"><span>بر</span></div>
           </div>
         </div>
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/toast-milk.webp" alt="خبز توست بالحليب"></div>
-          <div class="prod-body">
-            <h4>خبز توست بالحليب</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>600 جرام</span></div>
-              <div><b>القطاع:</b><span>أسواق</span></div>
-            </div>
-            <div class="prod-tags"><span>بالحليب</span></div>
-          </div>
-        </div>
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/toast-multigrain.webp" alt="خبز توست بر بالحبوب"></div>
-          <div class="prod-body">
-            <h4>خبز توست بر بالحبوب</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>600 جرام</span></div>
-              <div><b>القطاع:</b><span>أسواق</span></div>
-            </div>
-            <div class="prod-tags"><span>بر بالحبوب</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- البقسماط -->
-    <div class="cat-block">
-      <div class="cat-title reveal">
-        <span class="num">6</span>
-        <h3>البقسماط</h3>
-        <span class="line"></span>
-      </div>
-      <div class="prod-grid">
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/breadcrumbs.webp" alt="بقسماط عادي"></div>
-          <div class="prod-body">
-            <h4>بقسماط عادي</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>400 جرام</span></div>
-              <div><b>القطاع:</b><span>أسواق</span></div>
-            </div>
-            <div class="prod-tags"><span>عادي</span></div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -607,6 +619,10 @@
       <div class="proof-card reveal">
         <div class="display">قبل اعتماد المورد...</div>
         <p>جرّب الجودة بنفسك. اطلب عيناتك المجانية الآن وتواصل معنا لطلبات التوريد.</p>
+        <a class="btn btn-outline-light" href="#products" style="margin-bottom:22px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 20l-3-3 3-3"/></svg>
+          اطلع على قائمة المنتجات
+        </a>
         <span class="phone" dir="ltr">+966 55 077 0645</span>
         <div class="cta-row" style="justify-content:center;">
           <a class="btn btn-whatsapp" href="https://wa.me/966550770645?text=مرحباً%2C%20أرغب%20بالتواصل%20بخصوص%20طلبات%20التوريد" target="_blank" rel="noopener">
