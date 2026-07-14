@@ -23,8 +23,8 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  #hero, #products, #contact{scroll-margin-top:216px;}
-  @media (max-width:600px){ #hero, #products, #contact{scroll-margin-top:164px;} }
+  #hero, #products, #contact{scroll-margin-top:116px;}
+  @media (max-width:600px){ #hero, #products, #contact{scroll-margin-top:88px;} }
   body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.6;}
   h1,h2,h3,.display{font-family:'Lalezar',sans-serif;font-weight:400;letter-spacing:.5px;}
   a{text-decoration:none;color:inherit;}
@@ -55,10 +55,10 @@
   .topbar{position:fixed;top:0;right:0;left:0;z-index:200;display:flex;align-items:center;justify-content:center;
     padding:8px 5%;background:rgba(251,246,236,.92);backdrop-filter:blur(8px);box-shadow:0 2px 16px rgba(41,20,16,.08);}
   .topbar-logo-link{display:flex;align-items:center;}
-  .topbar .logo{height:200px;width:auto;}
+  .topbar .logo{height:100px;width:auto;}
 
   /* ---------- hero ---------- */
-  .hero{min-height:100vh;display:flex;align-items:center;padding:230px 0 90px;
+  .hero{min-height:100vh;display:flex;align-items:center;padding:150px 0 90px;
     background:
       linear-gradient(115deg, rgba(80,11,18,.94) 0%, rgba(111,15,24,.86) 38%, rgba(194,27,46,.55) 68%, rgba(80,11,18,.75) 100%),
       url('assets/factory.webp') center/cover no-repeat;
@@ -78,21 +78,19 @@
   .coverage .eyebrow{background:rgba(255,255,255,.14);color:var(--gold-light);}
   .coverage h2{color:var(--white);font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:14px;}
   .coverage p.sub{color:rgba(255,255,255,.8);max-width:600px;margin:0 auto 44px;}
-  .coverage-truck{width:64px;height:64px;margin:0 auto 26px;background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;}
-  .coverage-truck svg{width:30px;height:30px;color:var(--gold-light);}
-  .coverage-route{display:flex;align-items:center;justify-content:center;max-width:760px;margin:0 auto;flex-wrap:wrap;}
-  .coverage-city{display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 22px;}
-  .coverage-city .pin{width:54px;height:54px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;}
-  .coverage-city .pin svg{width:26px;height:26px;color:var(--red-deep);}
-  .coverage-city b{font-size:1.05rem;font-weight:800;}
-  .coverage-city span{color:rgba(255,255,255,.7);font-size:.8rem;}
-  .coverage-line{flex:1;min-width:40px;height:2px;
-    background:repeating-linear-gradient(90deg, rgba(255,255,255,.5) 0 8px, transparent 8px 16px);}
-  @media (max-width:720px){
-    .coverage-route{flex-direction:column;gap:22px;}
-    .coverage-line{width:2px;height:30px;flex:none;
-      background:repeating-linear-gradient(180deg, rgba(255,255,255,.5) 0 8px, transparent 8px 16px);}
+  .coverage-body{display:flex;align-items:center;gap:56px;max-width:960px;margin:0 auto;text-align:right;}
+  .coverage-map{flex:1.2;min-width:0;}
+  .coverage-map img{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 20px 46px rgba(0,0,0,.32);}
+  .coverage-legend{flex:1;display:flex;flex-direction:column;gap:20px;}
+  .coverage-city{display:flex;align-items:center;gap:14px;}
+  .coverage-city .dot{width:14px;height:14px;border-radius:50%;background:var(--gold);flex-shrink:0;
+    box-shadow:0 0 0 5px rgba(227,162,61,.22);}
+  .coverage-city b{display:block;font-size:1.1rem;font-weight:800;margin-bottom:2px;}
+  .coverage-city span{color:rgba(255,255,255,.65);font-size:.85rem;}
+  @media (max-width:820px){
+    .coverage-body{flex-direction:column;gap:32px;}
+    .coverage-legend{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:22px;width:100%;}
+    .coverage-city{flex-direction:column;text-align:center;gap:8px;}
   }
 
   /* ---------- trust strip ---------- */
@@ -172,7 +170,7 @@
   footer .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-bottom:24px;
     border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:20px;}
   footer .foot-brand{display:flex;align-items:center;gap:12px;}
-  footer .foot-brand img{height:136px;filter:brightness(0) invert(1);opacity:.9;}
+  footer .foot-brand img{height:68px;filter:brightness(0) invert(1);opacity:.9;}
   footer address{font-style:normal;line-height:1.9;}
   footer .copyright{text-align:center;color:rgba(255,255,255,.45);font-size:.78rem;}
 
@@ -188,10 +186,10 @@
 
     /* topbar */
     .topbar{padding:10px 18px;}
-    .topbar .logo{height:144px;}
+    .topbar .logo{height:72px;}
 
     /* hero */
-    .hero{padding:172px 0 56px;min-height:0;}
+    .hero{padding:112px 0 56px;min-height:0;}
     .hero h1{font-size:1.9rem;margin-bottom:16px;}
     .hero p.lead{font-size:.98rem;margin-bottom:22px;}
     .hero-audience{gap:8px;margin-bottom:22px;}
@@ -217,7 +215,6 @@
 
     .coverage{padding:52px 0;}
     .coverage p.sub{margin-bottom:32px;}
-    .coverage-truck{width:56px;height:56px;margin-bottom:22px;}
 
     .products{padding:8px 0 56px;}
     .cat-block{margin-bottom:36px;}
@@ -359,26 +356,32 @@
       </div>
       <h2>أسطولنا يغطي 3 مناطق رئيسية</h2>
       <p class="sub">توصيل منتظم بأسطولنا الخاص إلى عملائنا في المطاعم، الإعاشة، البقالات والأسواق داخل هذه المناطق.</p>
-      <div class="coverage-truck">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
-      </div>
-      <div class="coverage-route">
-        <div class="coverage-city">
-          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <b>الرياض</b>
-          <span>توصيل مباشر</span>
+      <div class="coverage-body">
+        <div class="coverage-map">
+          <img src="assets/coverage-map.webp" alt="خريطة تغطية التوصيل: الرياض، القصيم، والمنطقة الشرقية">
         </div>
-        <div class="coverage-line"></div>
-        <div class="coverage-city">
-          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <b>القصيم</b>
-          <span>توصيل مباشر</span>
-        </div>
-        <div class="coverage-line"></div>
-        <div class="coverage-city">
-          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <b>المنطقة الشرقية</b>
-          <span>توصيل مباشر</span>
+        <div class="coverage-legend">
+          <div class="coverage-city">
+            <span class="dot"></span>
+            <div>
+              <b>الرياض</b>
+              <span>توصيل مباشر</span>
+            </div>
+          </div>
+          <div class="coverage-city">
+            <span class="dot"></span>
+            <div>
+              <b>القصيم</b>
+              <span>توصيل مباشر</span>
+            </div>
+          </div>
+          <div class="coverage-city">
+            <span class="dot"></span>
+            <div>
+              <b>المنطقة الشرقية</b>
+              <span>توصيل مباشر</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
