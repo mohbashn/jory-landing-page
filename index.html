@@ -23,8 +23,8 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  #hero, #products, #contact{scroll-margin-top:216px;}
-  @media (max-width:600px){ #hero, #products, #contact{scroll-margin-top:164px;} }
+  #hero, #products, #contact{scroll-margin-top:90px;}
+  @media (max-width:600px){ #hero, #products, #contact{scroll-margin-top:64px;} }
   body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.6;}
   h1,h2,h3,.display{font-family:'Lalezar',sans-serif;font-weight:400;letter-spacing:.5px;}
   a{text-decoration:none;color:inherit;}
@@ -53,12 +53,15 @@
 
   /* ---------- top bar ---------- */
   .topbar{position:fixed;top:0;right:0;left:0;z-index:200;display:flex;align-items:center;justify-content:center;
-    padding:8px 5%;background:rgba(251,246,236,.92);backdrop-filter:blur(8px);box-shadow:0 2px 16px rgba(41,20,16,.08);}
+    padding:14px 5%;background:rgba(251,246,236,.92);backdrop-filter:blur(8px);box-shadow:0 2px 16px rgba(41,20,16,.08);
+    transition:padding .3s ease;}
+  .topbar.scrolled{padding:8px 5%;box-shadow:0 4px 20px rgba(41,20,16,.14);}
   .topbar-logo-link{display:flex;align-items:center;}
-  .topbar .logo{height:200px;width:auto;}
+  .topbar .logo{height:62px;width:auto;transition:height .3s ease;}
+  .topbar.scrolled .logo{height:44px;}
 
   /* ---------- hero ---------- */
-  .hero{min-height:100vh;display:flex;align-items:center;padding:250px 0 90px;
+  .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;
     background:
       linear-gradient(115deg, rgba(80,11,18,.94) 0%, rgba(111,15,24,.86) 38%, rgba(194,27,46,.55) 68%, rgba(80,11,18,.75) 100%),
       url('assets/factory.webp') center/cover no-repeat;
@@ -186,14 +189,16 @@
 
     /* topbar */
     .topbar{padding:10px 18px;}
-    .topbar .logo{height:144px;}
+    .topbar.scrolled{padding:6px 18px;}
+    .topbar .logo{height:44px;}
+    .topbar.scrolled .logo{height:32px;}
 
     /* hero */
-    .hero{padding:184px 0 56px;min-height:0;}
+    .hero{padding:84px 0 56px;min-height:0;}
     .hero h1{font-size:1.9rem;margin-bottom:16px;}
     .hero p.lead{font-size:.98rem;margin-bottom:22px;}
-    .hero-audience{gap:8px;margin-bottom:22px;}
-    .hero-audience span{font-size:.78rem;padding:7px 12px;}
+    .hero-audience{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px;}
+    .hero-audience span{font-size:.78rem;padding:7px 12px;justify-content:center;}
 
     /* generic cta rows stack full-width for easy tapping */
     .cta-row{flex-direction:column;gap:12px;}
@@ -271,7 +276,7 @@
         </span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          البقالات
+          البقالات والسوبرماركتات
         </span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -664,5 +669,11 @@
 </a>
 
 
+<script>
+  const topbar = document.querySelector('.topbar');
+  const onScroll = () => topbar.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+</script>
 </body>
 </html>
