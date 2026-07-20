@@ -113,6 +113,11 @@
   .cat-title h3{font-family:'Lalezar',sans-serif;color:var(--red-deep);font-size:1.55rem;}
   .cat-title .line{flex:1;height:2px;background:linear-gradient(90deg, rgba(194,27,46,.35), transparent);}
 
+  .prod-subgroup{margin-bottom:26px;}
+  .prod-subgroup:last-child{margin-bottom:0;}
+  .prod-subtitle{display:inline-flex;align-items:center;gap:8px;background:rgba(194,27,46,.09);color:var(--red);
+    font-weight:800;font-size:.82rem;padding:7px 16px;border-radius:99px;margin-bottom:14px;}
+
   .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;}
   .prod-card{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(80,11,18,.08);
     transition:transform .3s ease, box-shadow .3s ease;display:flex;flex-direction:column;}
@@ -346,38 +351,68 @@
         <h3>لفائف التورتيلا</h3>
         <span class="line"></span>
       </div>
-      <div class="prod-grid">
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/tortilla-white.webp" alt="تورتيلا دقيق أبيض"></div>
-          <div class="prod-body">
-            <h4>تورتيلا دقيق أبيض</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>6 - 8 - 10 - 12 إنش</span></div>
-              <div><b>القطاع:</b><span>أسواق، مطاعم وإعاشة</span></div>
+      <div class="prod-subgroup reveal">
+        <span class="prod-subtitle">قطاع الأسواق</span>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/tortilla-white-market.webp" alt="تورتيلا دقيق أبيض - أسواق"></div>
+            <div class="prod-body">
+              <h4>تورتيلا دقيق أبيض</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>6 - 8 - 10 إنش</span></div>
+              </div>
             </div>
-            <div class="prod-tags"><span>دقيق أبيض</span></div>
+          </div>
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/tortilla-wheat.webp" alt="تورتيلا بر - أسواق"></div>
+            <div class="prod-body">
+              <h4>تورتيلا بر (حبوب كاملة)</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>8 إنش</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/tortilla-spicy.webp" alt="تورتيلا بالفلفل الحار - أسواق"></div>
+            <div class="prod-body">
+              <h4>تورتيلا بالفلفل الحار</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>8 إنش</span></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/tortilla-wheat.webp" alt="تورتيلا بر"></div>
-          <div class="prod-body">
-            <h4>تورتيلا بر (حبوب كاملة)</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>6 - 8 - 10 - 12 إنش</span></div>
-              <div><b>القطاع:</b><span>أسواق، مطاعم وإعاشة</span></div>
+      </div>
+
+      <div class="prod-subgroup reveal">
+        <span class="prod-subtitle">قطاع المطاعم والإعاشة</span>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/tortilla-white.webp" alt="تورتيلا دقيق أبيض - إعاشة"></div>
+            <div class="prod-body">
+              <h4>تورتيلا دقيق أبيض</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>6 - 8 - 10 - 12 إنش</span></div>
+              </div>
             </div>
-            <div class="prod-tags"><span>بر</span></div>
           </div>
-        </div>
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/tortilla-spicy.webp" alt="تورتيلا بالفلفل الحار"></div>
-          <div class="prod-body">
-            <h4>تورتيلا بالفلفل الحار</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>6 - 8 - 10 - 12 إنش</span></div>
-              <div><b>القطاع:</b><span>أسواق، مطاعم وإعاشة</span></div>
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/tortilla-white.webp" alt="تورتيلا بر - إعاشة"></div>
+            <div class="prod-body">
+              <h4>تورتيلا بر (حبوب كاملة)</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>6 - 8 - 10 - 12 إنش</span></div>
+              </div>
             </div>
-            <div class="prod-tags"><span>بالفلفل الحار</span></div>
+          </div>
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/tortilla-white.webp" alt="تورتيلا بالفلفل الحار - إعاشة"></div>
+            <div class="prod-body">
+              <h4>تورتيلا بالفلفل الحار</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>6 - 8 - 10 - 12 إنش</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -390,27 +425,50 @@
         <h3>خبز البرجر</h3>
         <span class="line"></span>
       </div>
-      <div class="prod-grid">
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/bun-plain.webp" alt="خبز برجر سادة"></div>
-          <div class="prod-body">
-            <h4>خبز برجر سادة</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>4 إنش / ميني 2.8 - 3.7 - 4 إنش</span></div>
-              <div><b>القطاع:</b><span>أسواق، مطاعم وإعاشة</span></div>
+      <div class="prod-subgroup reveal">
+        <span class="prod-subtitle">قطاع الأسواق</span>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/bun-plain.webp" alt="خبز برجر سادة - أسواق"></div>
+            <div class="prod-body">
+              <h4>خبز برجر سادة</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>4 إنش</span></div>
+              </div>
             </div>
-            <div class="prod-tags"><span>سادة</span></div>
+          </div>
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/bun-sesame.webp" alt="خبز برجر بالسمسم - أسواق"></div>
+            <div class="prod-body">
+              <h4>خبز برجر بالسمسم</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>4 إنش</span></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/bun-sesame.webp" alt="خبز برجر بالسمسم"></div>
-          <div class="prod-body">
-            <h4>خبز برجر بالسمسم</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>4 إنش / ميني 2.8 - 3.7 - 4 إنش</span></div>
-              <div><b>القطاع:</b><span>أسواق، مطاعم وإعاشة</span></div>
+      </div>
+
+      <div class="prod-subgroup reveal">
+        <span class="prod-subtitle">قطاع المطاعم والإعاشة</span>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/bun-plain-bag.webp" alt="خبز برجر سادة - إعاشة"></div>
+            <div class="prod-body">
+              <h4>خبز برجر سادة</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>ميني 2.8 - 3.7 - 4 إنش</span></div>
+              </div>
             </div>
-            <div class="prod-tags"><span>بالسمسم</span></div>
+          </div>
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/bun-plain-bag.webp" alt="خبز برجر بالسمسم - إعاشة"></div>
+            <div class="prod-body">
+              <h4>خبز برجر بالسمسم</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>ميني 2.8 - 3.7 - 4 إنش</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -423,16 +481,32 @@
         <h3>ساندويتش رول</h3>
         <span class="line"></span>
       </div>
-      <div class="prod-grid">
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/roll-white.webp" alt="ساندويتش رول سادة"></div>
-          <div class="prod-body">
-            <h4>ساندويتش رول أبيض</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>18 سم</span></div>
-              <div><b>القطاع:</b><span>أسواق، مطاعم وإعاشة</span></div>
+      <div class="prod-subgroup reveal">
+        <span class="prod-subtitle">قطاع الأسواق</span>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/roll-white.webp" alt="ساندويتش رول سادة - أسواق"></div>
+            <div class="prod-body">
+              <h4>ساندويتش رول سادة</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>18 سم</span></div>
+              </div>
             </div>
-            <div class="prod-tags"><span>سادة</span><span>بالسمسم</span><span>بطاطس</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-subgroup reveal">
+        <span class="prod-subtitle">قطاع المطاعم والإعاشة</span>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/roll-plain-bag.webp" alt="ساندويتش رول سادة - بالسمسم - بطاطس - إعاشة"></div>
+            <div class="prod-body">
+              <h4>ساندويتش رول سادة - بالسمسم - بطاطس</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>18 سم</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -445,16 +519,32 @@
         <h3>ساندويتش جامبو</h3>
         <span class="line"></span>
       </div>
-      <div class="prod-grid">
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/jumbo-sesame.webp" alt="ساندويتش جامبو بالسمسم"></div>
-          <div class="prod-body">
-            <h4>ساندويتش جامبو</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>24 سم</span></div>
-              <div><b>القطاع:</b><span>أسواق، مطاعم وإعاشة</span></div>
+      <div class="prod-subgroup reveal">
+        <span class="prod-subtitle">قطاع الأسواق</span>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/jumbo-sesame.webp" alt="ساندويتش جامبو بالسمسم - أسواق"></div>
+            <div class="prod-body">
+              <h4>ساندويتش جامبو بالسمسم</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>24 سم</span></div>
+              </div>
             </div>
-            <div class="prod-tags"><span>بالسمسم</span><span>سادة</span><span>بريوش</span><span>بطاطس</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-subgroup reveal">
+        <span class="prod-subtitle">قطاع المطاعم والإعاشة</span>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/jumbo-plain-bag.webp" alt="ساندويتش جامبو بالسمسم - سادة - بريوش - بطاطس - إعاشة"></div>
+            <div class="prod-body">
+              <h4>ساندويتش جامبو بالسمسم - سادة - بريوش - بطاطس</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>24 سم</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -476,7 +566,6 @@
               <div><b>الحجم:</b><span>600 جرام</span></div>
               <div><b>القطاع:</b><span>أسواق</span></div>
             </div>
-            <div class="prod-tags"><span>أبيض</span></div>
           </div>
         </div>
         <div class="prod-card reveal">
@@ -487,7 +576,6 @@
               <div><b>الحجم:</b><span>600 جرام</span></div>
               <div><b>القطاع:</b><span>أسواق</span></div>
             </div>
-            <div class="prod-tags"><span>بر</span></div>
           </div>
         </div>
       </div>
