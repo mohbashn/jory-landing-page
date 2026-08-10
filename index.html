@@ -175,6 +175,10 @@
   footer .foot-brand{display:flex;align-items:center;gap:12px;}
   footer .foot-brand img{height:136px;filter:brightness(0) invert(1);opacity:.9;}
   footer address{font-style:normal;line-height:1.9;}
+  footer .map-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold-light);font-weight:700;
+    margin-top:8px;transition:color .2s ease;}
+  footer .map-link:hover{color:var(--gold);text-decoration:underline;}
+  footer .map-link svg{width:15px;height:15px;flex-shrink:0;}
   .social-links{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:22px;}
   .social-links a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);
     display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);
@@ -679,7 +683,11 @@
       </div>
       <address>
         المملكة العربية السعودية — الرياض<br>
-        ص. ب 58123 الرياض 11594
+        ص. ب 58123 الرياض 11594<br>
+        <a class="map-link" href="https://maps.app.goo.gl/UoiW6jNtjJQjJUFg7" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          عرض موقع المصنع على الخريطة
+        </a>
       </address>
     </div>
     <div class="social-links">
