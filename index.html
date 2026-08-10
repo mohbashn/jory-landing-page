@@ -160,10 +160,12 @@
   .proof-card p{color:rgba(255,255,255,.82);margin-bottom:22px;font-size:.95rem;}
   .proof-card .phone{font-family:'Lalezar',sans-serif;font-size:1.9rem;color:var(--white);letter-spacing:2px;
     direction:ltr;display:block;margin-bottom:8px;}
-  .proof-card .email-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.75);
-    font-size:.9rem;direction:ltr;margin-bottom:20px;transition:color .2s ease;}
-  .proof-card .email-link:hover{color:var(--gold-light);text-decoration:underline;}
-  .proof-card .email-link svg{width:15px;height:15px;flex-shrink:0;}
+  .proof-card .email-link{display:inline-flex;align-items:center;gap:8px;color:var(--white);
+    font-size:1.15rem;font-weight:700;direction:ltr;margin-bottom:20px;transition:color .2s ease;
+    padding:6px 4px;border-bottom:1.5px dashed rgba(255,255,255,.4);cursor:pointer;}
+  .proof-card .email-link:hover{color:var(--gold-light);border-color:var(--gold-light);}
+  .proof-card .email-link svg{width:19px;height:19px;flex-shrink:0;}
+  @media (max-width:480px){ .proof-card .email-link{font-size:.95rem;} }
   @media (max-width:900px){ .proof-inner{grid-template-columns:1fr;} }
 
   /* ---------- final CTA ---------- */
