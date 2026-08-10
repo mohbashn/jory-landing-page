@@ -62,6 +62,11 @@
   .topbar-logo-link{display:flex;align-items:center;}
   .topbar .logo{height:62px;width:auto;transition:height .3s ease;}
   .topbar.scrolled .logo{height:44px;}
+  .lang-toggle{position:absolute;top:50%;inset-inline-end:5%;transform:translateY(-50%);
+    background:var(--red);color:var(--white);border:0;border-radius:99px;padding:9px 18px;
+    font-weight:800;font-size:.82rem;font-family:'Tajawal',sans-serif;cursor:pointer;
+    transition:background .2s ease, padding .3s ease;}
+  .lang-toggle:hover{background:var(--red-dark);}
 
   /* ---------- hero ---------- */
   .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;
@@ -208,6 +213,7 @@
     .topbar.scrolled{padding:6px 18px;}
     .topbar .logo{height:44px;}
     .topbar.scrolled .logo{height:32px;}
+    .lang-toggle{padding:7px 13px;font-size:.74rem;}
 
     /* hero */
     .hero{padding:84px 0 56px;min-height:0;}
@@ -270,38 +276,39 @@
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
   <a href="#hero" class="topbar-logo-link"><img src="assets/logo.png" alt="جوري للمخبوزات" class="logo"></a>
+  <button type="button" id="langToggle" class="lang-toggle">English</button>
 </header>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="hero">
   <div class="wrap">
     <div class="hero-inner reveal in">
-      <h1><span>مصنع جوري</span>.. شريك النجاح في عالم المخبوزات</h1>
-      <p class="lead">نخبز <b>أكثر من 100,000 قطعة</b> يوميًا بأحدث ما توصلت إليه تقنية المخبوزات وبجودة ثابتة، مع توصيل يغطي كافة مناطق المملكة.</p>
+      <h1 data-i18n="hero.title"><span>مصنع جوري</span>.. شريك النجاح في عالم المخبوزات</h1>
+      <p class="lead" data-i18n="hero.lead">نخبز <b>أكثر من 100,000 قطعة</b> يوميًا بأحدث ما توصلت إليه تقنية المخبوزات وبجودة ثابتة، مع توصيل يغطي كافة مناطق المملكة.</p>
 
       <div class="hero-audience">
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          أسواق الجملة والسوبر ماركت
+          <span data-i18n="hero.aud1">أسواق الجملة والسوبر ماركت</span>
         </span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          المطاعم والكافيهات
+          <span data-i18n="hero.aud2">المطاعم والكافيهات</span>
         </span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          الإعاشة والتموين
+          <span data-i18n="hero.aud3">الإعاشة والتموين</span>
         </span>
       </div>
 
       <div class="cta-row">
         <a class="btn btn-whatsapp btn-lg" href="https://wa.me/966550770645?text=مرحباً%2C%20أرغب%20بالتواصل%20مع%20قسم%20المبيعات" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.99.585 3.842 1.591 5.398L2 22l4.735-1.562A9.953 9.953 0 0 0 12.001 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.2a8.174 8.174 0 0 1-4.396-1.276l-.315-.19-3.11 1.027 1.05-3.033-.205-.312A8.173 8.173 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.2 3.678 8.2 8.2 0 4.522-3.679 8.2-8.2 8.2z"/></svg>
-          تواصل مع قسم المبيعات
+          <span data-i18n="hero.ctaSales">تواصل مع قسم المبيعات</span>
         </a>
         <a class="btn btn-outline-light btn-lg" href="#products">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 20l-3-3 3-3"/></svg>
-          قائمة المنتجات
+          <span data-i18n="hero.ctaProducts">قائمة المنتجات</span>
         </a>
       </div>
     </div>
@@ -314,30 +321,30 @@
     <div class="sec-head reveal">
       <div class="eyebrow">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
-        لماذا تختار جوري كمورّد؟
+        <span data-i18n="why.eyebrow">لماذا تختار جوري كمورّد؟</span>
       </div>
-      <h2>شريكك الأمثل في عالم المخبوزات</h2>
+      <h2 data-i18n="why.title">شريكك الأمثل في عالم المخبوزات</h2>
     </div>
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
-        <h3>جودة ثابتة</h3>
-        <p>معايير إنتاج صارمة تضمن نفس الجودة في كل طلبية، مهما تكرر التوريد.</p>
+        <h3 data-i18n="why.c1t">جودة ثابتة</h3>
+        <p data-i18n="why.c1d">معايير إنتاج صارمة تضمن نفس الجودة في كل طلبية، مهما تكرر التوريد.</p>
       </div>
       <div class="why-card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9.5c0-1-1-2-3-2s-3 1-3 2 1 1.5 3 2 3 1 3 2-1 2-3 2-3-1-3-2"/><path d="M12 6v2M12 16v2"/></svg></div>
-        <h3>أسعار منافسة</h3>
-        <p>تسعير خاص بالجملة يرفع هامش ربحكم مقارنة بالتوريد التقليدي، بلا وسطاء وبلا تكاليف خفية.</p>
+        <h3 data-i18n="why.c2t">أسعار منافسة</h3>
+        <p data-i18n="why.c2d">تسعير خاص بالجملة يرفع هامش ربحكم مقارنة بالتوريد التقليدي، بلا وسطاء وبلا تكاليف خفية.</p>
       </div>
       <div class="why-card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></div>
-        <h3>أسطول توريد منتظم</h3>
-        <p>جدولة توصيل ثابتة بكميات تناسب احتياجكم، لضمان توفر المنتج في منشأتكم دائماً.</p>
+        <h3 data-i18n="why.c3t">أسطول توريد منتظم</h3>
+        <p data-i18n="why.c3d">جدولة توصيل ثابتة بكميات تناسب احتياجكم، لضمان توفر المنتج في منشأتكم دائماً.</p>
       </div>
       <div class="why-card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <h3>متابعة يومية</h3>
-        <p>تواصل مستمر لمتابعة طلباتكم وضمان وصول التوريد في وقته دون أي تأخير.</p>
+        <h3 data-i18n="why.c4t">متابعة يومية</h3>
+        <p data-i18n="why.c4d">تواصل مستمر لمتابعة طلباتكم وضمان وصول التوريد في وقته دون أي تأخير.</p>
       </div>
     </div>
   </div>
@@ -349,10 +356,10 @@
     <div class="reveal">
       <div class="eyebrow">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
-        تغطية واسعة
+        <span data-i18n="coverage.eyebrow">تغطية واسعة</span>
       </div>
-      <h2>أسطولنا يغطي جميع مناطق المملكة</h2>
-      <p class="sub">توصيل منتظم بأسطولنا الخاص إلى عملائنا في جميع مناطق المملكة العربية السعودية.</p>
+      <h2 data-i18n="coverage.title">أسطولنا يغطي جميع مناطق المملكة</h2>
+      <p class="sub" data-i18n="coverage.sub">توصيل منتظم بأسطولنا الخاص إلى عملائنا في جميع مناطق المملكة العربية السعودية.</p>
       <div class="coverage-body">
         <div class="coverage-map">
           <img src="assets/coverage-map.webp" alt="خريطة تغطية التوصيل: جميع مناطق المملكة العربية السعودية">
@@ -368,10 +375,10 @@
     <div class="sec-head reveal">
       <div class="eyebrow">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 20l-3-3 3-3"/></svg>
-        سلة منتجات جوري
+        <span data-i18n="products.eyebrow">سلة منتجات جوري</span>
       </div>
-      <h2>تشكيلة متكاملة تغطي كل احتياجاتكم</h2>
-      <p>جميع منتجاتنا متوفرة بأحجام وقطاعات تلبي احتياج الأسواق والمطاعم وقطاع الإعاشة على حدٍ سواء.</p>
+      <h2 data-i18n="products.title">تشكيلة متكاملة تغطي كل احتياجاتكم</h2>
+      <p data-i18n="products.sub">جميع منتجاتنا متوفرة بأحجام وقطاعات تلبي احتياج الأسواق والمطاعم وقطاع الإعاشة على حدٍ سواء.</p>
        
     </div>
 
@@ -379,40 +386,40 @@
     <div class="sector-block">
       <div class="sector-heading reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></div>
-        <h2>قطاع الأسواق</h2>
+        <h2 data-i18n="products.sectorMarket">قطاع الأسواق</h2>
       </div>
 
       <div class="cat-block">
         <div class="cat-title reveal">
           <span class="num">1</span>
-          <h3>لفائف التورتيلا</h3>
+          <h3 data-i18n="products.catTortilla">لفائف التورتيلا</h3>
           <span class="line"></span>
         </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/tortilla-white-market.webp" alt="تورتيلا أبيض - أسواق"></div>
             <div class="prod-body">
-              <h4>تورتيلا أبيض</h4>
+              <h4 data-i18n="prod.tortWhite">تورتيلا أبيض</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>6 - 8 - 10 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.w6_8_10">6 - 8 - 10 إنش</span></div>
               </div>
             </div>
           </div>
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/tortilla-wheat.webp" alt="تورتيلا بر - أسواق"></div>
             <div class="prod-body">
-              <h4>تورتيلا بر (حبة كاملة)</h4>
+              <h4 data-i18n="prod.tortWheat">تورتيلا بر (حبة كاملة)</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>8 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.8">8 إنش</span></div>
               </div>
             </div>
           </div>
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/tortilla-spicy.webp" alt="تورتيلا بالفلفل الحار - أسواق"></div>
             <div class="prod-body">
-              <h4>تورتيلا بالفلفل الحار</h4>
+              <h4 data-i18n="prod.tortSpicy">تورتيلا بالفلفل الحار</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>8 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.8">8 إنش</span></div>
               </div>
             </div>
           </div>
@@ -422,25 +429,25 @@
       <div class="cat-block">
         <div class="cat-title reveal">
           <span class="num">2</span>
-          <h3>خبز البرجر</h3>
+          <h3 data-i18n="products.catBurger">خبز البرجر</h3>
           <span class="line"></span>
         </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/bun-plain.webp" alt="خبز برجر سادة - أسواق"></div>
             <div class="prod-body">
-              <h4>خبز برجر سادة</h4>
+              <h4 data-i18n="prod.bunPlain">خبز برجر سادة</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>4 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.4">4 إنش</span></div>
               </div>
             </div>
           </div>
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/bun-sesame.webp" alt="خبز برجر بالسمسم - أسواق"></div>
             <div class="prod-body">
-              <h4>خبز برجر بالسمسم</h4>
+              <h4 data-i18n="prod.bunSesame">خبز برجر بالسمسم</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>4 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.4">4 إنش</span></div>
               </div>
             </div>
           </div>
@@ -450,16 +457,16 @@
       <div class="cat-block">
         <div class="cat-title reveal">
           <span class="num">3</span>
-          <h3>ساندويتش رول</h3>
+          <h3 data-i18n="products.catRoll">ساندويتش رول</h3>
           <span class="line"></span>
         </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/roll-white.webp" alt="ساندويتش رول سادة - أسواق"></div>
             <div class="prod-body">
-              <h4>ساندويتش رول سادة</h4>
+              <h4 data-i18n="prod.rollMkt">ساندويتش رول سادة</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>18 سم</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.18cm">18 سم</span></div>
               </div>
             </div>
           </div>
@@ -469,16 +476,16 @@
       <div class="cat-block">
         <div class="cat-title reveal">
           <span class="num">4</span>
-          <h3>ساندويتش جامبو</h3>
+          <h3 data-i18n="products.catJumbo">ساندويتش جامبو</h3>
           <span class="line"></span>
         </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/jumbo-sesame.webp" alt="ساندويتش جامبو بالسمسم - أسواق"></div>
             <div class="prod-body">
-              <h4>ساندويتش جامبو بالسمسم</h4>
+              <h4 data-i18n="prod.jumboMkt">ساندويتش جامبو بالسمسم</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>24 سم</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.24cm">24 سم</span></div>
               </div>
             </div>
           </div>
@@ -488,25 +495,25 @@
       <div class="cat-block">
         <div class="cat-title reveal">
           <span class="num">5</span>
-          <h3>خبز توست</h3>
+          <h3 data-i18n="products.catToast">خبز توست</h3>
           <span class="line"></span>
         </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/toast-white.webp" alt="خبز توست أبيض"></div>
             <div class="prod-body">
-              <h4>خبز توست أبيض</h4>
+              <h4 data-i18n="prod.toastWhite">خبز توست أبيض</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>600 جرام</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.600g">600 جرام</span></div>
               </div>
             </div>
           </div>
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/toast-wheat.webp" alt="خبز توست بر"></div>
             <div class="prod-body">
-              <h4>خبز توست بر</h4>
+              <h4 data-i18n="prod.toastWheat">خبز توست بر</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>600 جرام</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.600g">600 جرام</span></div>
               </div>
             </div>
           </div>
@@ -518,40 +525,40 @@
     <div class="sector-block">
       <div class="sector-heading reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
-        <h2>قطاع المطاعم والإعاشة</h2>
+        <h2 data-i18n="products.sectorFood">قطاع المطاعم والإعاشة</h2>
       </div>
 
       <div class="cat-block">
         <div class="cat-title reveal">
           <span class="num">1</span>
-          <h3>لفائف التورتيلا</h3>
+          <h3 data-i18n="products.catTortilla">لفائف التورتيلا</h3>
           <span class="line"></span>
         </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/tortilla-white.webp" alt="تورتيلا أبيض - إعاشة"></div>
             <div class="prod-body">
-              <h4>تورتيلا أبيض</h4>
+              <h4 data-i18n="prod.tortWhite">تورتيلا أبيض</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>6 - 8 - 10 - 12 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.w6_8_10_12">6 - 8 - 10 - 12 إنش</span></div>
               </div>
             </div>
           </div>
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/tortilla-white.webp" alt="تورتيلا بر - إعاشة"></div>
             <div class="prod-body">
-              <h4>تورتيلا بر (حبة كاملة)</h4>
+              <h4 data-i18n="prod.tortWheat">تورتيلا بر (حبة كاملة)</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>6 - 8 - 10 - 12 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.w6_8_10_12">6 - 8 - 10 - 12 إنش</span></div>
               </div>
             </div>
           </div>
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/tortilla-white.webp" alt="تورتيلا بالفلفل الحار - إعاشة"></div>
             <div class="prod-body">
-              <h4>تورتيلا بالفلفل الحار</h4>
+              <h4 data-i18n="prod.tortSpicy">تورتيلا بالفلفل الحار</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>6 - 8 - 10 - 12 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.w6_8_10_12">6 - 8 - 10 - 12 إنش</span></div>
               </div>
             </div>
           </div>
@@ -561,25 +568,25 @@
       <div class="cat-block">
         <div class="cat-title reveal">
           <span class="num">2</span>
-          <h3>خبز البرجر</h3>
+          <h3 data-i18n="products.catBurger">خبز البرجر</h3>
           <span class="line"></span>
         </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/bun-plain-bag.webp" alt="خبز برجر سادة - إعاشة"></div>
             <div class="prod-body">
-              <h4>خبز برجر سادة</h4>
+              <h4 data-i18n="prod.bunPlain">خبز برجر سادة</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>ميني 2.8 - 3.7 - 4 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.mini">ميني 2.8 - 3.7 - 4 إنش</span></div>
               </div>
             </div>
           </div>
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/bun-plain-bag.webp" alt="خبز برجر بالسمسم - إعاشة"></div>
             <div class="prod-body">
-              <h4>خبز برجر بالسمسم</h4>
+              <h4 data-i18n="prod.bunSesame">خبز برجر بالسمسم</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>ميني 2.8 - 3.7 - 4 إنش</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.mini">ميني 2.8 - 3.7 - 4 إنش</span></div>
               </div>
             </div>
           </div>
@@ -589,16 +596,16 @@
       <div class="cat-block">
         <div class="cat-title reveal">
           <span class="num">3</span>
-          <h3>ساندويتش رول</h3>
+          <h3 data-i18n="products.catRoll">ساندويتش رول</h3>
           <span class="line"></span>
         </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/roll-plain-bag.webp" alt="ساندويتش رول سادة - بالسمسم - بطاطس - إعاشة"></div>
             <div class="prod-body">
-              <h4>ساندويتش رول سادة - بالسمسم - بطاطس</h4>
+              <h4 data-i18n="prod.rollFood">ساندويتش رول سادة - بالسمسم - بطاطس</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>18 سم</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.18cm">18 سم</span></div>
               </div>
             </div>
           </div>
@@ -608,16 +615,16 @@
       <div class="cat-block">
         <div class="cat-title reveal">
           <span class="num">4</span>
-          <h3>ساندويتش جامبو</h3>
+          <h3 data-i18n="products.catJumbo">ساندويتش جامبو</h3>
           <span class="line"></span>
         </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/jumbo-plain-bag.webp" alt="ساندويتش جامبو بالسمسم - سادة - بريوش - بطاطس - إعاشة"></div>
             <div class="prod-body">
-              <h4>ساندويتش جامبو بالسمسم - سادة - بريوش - بطاطس</h4>
+              <h4 data-i18n="prod.jumboFood">ساندويتش جامبو بالسمسم - سادة - بريوش - بطاطس</h4>
               <div class="prod-meta">
-                <div><b>الحجم:</b><span>24 سم</span></div>
+                <div><b data-i18n="products.sizeLabel">الحجم:</b><span data-i18n="size.24cm">24 سم</span></div>
               </div>
             </div>
           </div>
@@ -635,30 +642,30 @@
       <div class="reveal">
         <div class="eyebrow" style="background:rgba(255,255,255,.14);color:var(--gold-light);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-          مصنع مخبوزات جوري
+          <span data-i18n="proof.eyebrow">مصنع مخبوزات جوري</span>
         </div>
-        <h2>نوفر توريدًا يوميًا لأسواق الجملة والسوبر ماركت، والمطاعم والكافيهات، والإعاشة والتموين في جميع مناطق المملكة</h2>
+        <h2 data-i18n="proof.title">نوفر توريدًا يوميًا لأسواق الجملة والسوبر ماركت، والمطاعم والكافيهات، والإعاشة والتموين في جميع مناطق المملكة</h2>
         <ul class="checklist">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            مخبوزات طازجة يوميًا
+            <span data-i18n="proof.check1">مخبوزات طازجة يوميًا</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            أسعار جملة منافسة
+            <span data-i18n="proof.check2">أسعار جملة منافسة</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            توريد منتظم بكميات تناسب احتياجكم
+            <span data-i18n="proof.check3">توريد منتظم بكميات تناسب احتياجكم</span>
           </li>
         </ul>
       </div>
       <div class="proof-card reveal">
-        <div class="display">قبل اعتماد المورد...</div>
-        <p>جرّب الجودة بنفسك. اطلب عيناتك الآن وتواصل معنا لطلبات التوريد.</p>
+        <div class="display" data-i18n="proof.cardTitle">قبل اعتماد المورد...</div>
+        <p data-i18n="proof.cardDesc">جرّب الجودة بنفسك. اطلب عيناتك الآن وتواصل معنا لطلبات التوريد.</p>
         <a class="btn btn-outline-light" href="#products" style="margin-bottom:22px;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 20l-3-3 3-3"/></svg>
-          اطلع على قائمة المنتجات
+          <span data-i18n="proof.cardBtn">اطلع على قائمة المنتجات</span>
         </a>
         <span class="phone" dir="ltr">+966 55 077 0645</span>
         <a class="email-link" href="mailto:jury-bakery@almaseka.com.sa">
@@ -668,11 +675,11 @@
         <div class="cta-row" style="justify-content:center;">
           <a class="btn btn-whatsapp" href="https://wa.me/966550770645?text=مرحباً%2C%20أرغب%20بالتواصل%20بخصوص%20طلبات%20التوريد" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.99.585 3.842 1.591 5.398L2 22l4.735-1.562A9.953 9.953 0 0 0 12.001 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.2a8.174 8.174 0 0 1-4.396-1.276l-.315-.19-3.11 1.027 1.05-3.033-.205-.312A8.173 8.173 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.2 3.678 8.2 8.2 0 4.522-3.679 8.2-8.2 8.2z"/></svg>
-            واتساب
+            <span data-i18n="proof.whatsapp">واتساب</span>
           </a>
           <a class="btn btn-outline-light" href="tel:+966550770645">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            اتصال
+            <span data-i18n="proof.call">اتصال</span>
           </a>
         </div>
       </div>
@@ -687,16 +694,16 @@
     <div class="foot-inner">
       <div class="foot-brand">
         <div>
-          <div style="color:#fff;font-weight:800;">شركة مصنع جوري للصناعات الغذائية</div>
-          <div>إنتاج شركة الماسكة للتجارة لصالح أصحاب العلامة التجارية</div>
+          <div style="color:#fff;font-weight:800;" data-i18n="footer.brand">شركة مصنع جوري للصناعات الغذائية</div>
+          <div data-i18n="footer.tagline">إنتاج شركة الماسكة للتجارة لصالح أصحاب العلامة التجارية</div>
         </div>
       </div>
       <address>
-        المملكة العربية السعودية — الرياض<br>
-        ص. ب 58123 الرياض 11594<br>
+        <span data-i18n="footer.addr1">المملكة العربية السعودية — الرياض</span><br>
+        <span data-i18n="footer.addr2">ص. ب 58123 الرياض 11594</span><br>
         <a class="map-link" href="https://maps.app.goo.gl/UoiW6jNtjJQjJUFg7" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          عرض موقع المصنع على الخريطة
+          <span data-i18n="footer.mapLink">عرض موقع المصنع على الخريطة</span>
         </a>
       </address>
     </div>
@@ -720,7 +727,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
       </a>
     </div>
-    <div class="copyright">© جميع الحقوق محفوظة لمصنع جوري للصناعات الغذائية</div>
+    <div class="copyright" data-i18n="footer.copyright">© جميع الحقوق محفوظة لمصنع جوري للصناعات الغذائية</div>
   </div>
 </footer>
 
@@ -734,6 +741,114 @@
   const onScroll = () => topbar.classList.toggle('scrolled', window.scrollY > 40);
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+</script>
+
+<script>
+  const translations = {
+    ar: {},
+    en: {
+      'hero.title': '<span>Jory Factory</span>.. Your Partner in Baking Success',
+      'hero.lead': 'We bake <b>more than 100,000 pieces</b> daily using the latest baking technology and consistent quality, with delivery covering every region of the Kingdom.',
+      'hero.aud1': 'Wholesale Markets &amp; Supermarkets',
+      'hero.aud2': 'Restaurants &amp; Cafés',
+      'hero.aud3': 'Catering &amp; Food Supply',
+      'hero.ctaSales': 'Contact Sales Team',
+      'hero.ctaProducts': 'Product List',
+      'why.eyebrow': 'Why Choose Jory as Your Supplier?',
+      'why.title': 'Your Ideal Partner in the World of Baked Goods',
+      'why.c1t': 'Consistent Quality',
+      'why.c1d': 'Strict production standards ensure the same quality in every order, no matter how often you reorder.',
+      'why.c2t': 'Competitive Prices',
+      'why.c2d': 'Special wholesale pricing that boosts your profit margin compared to traditional supply, with no middlemen and no hidden costs.',
+      'why.c3t': 'Regular Delivery Fleet',
+      'why.c3d': 'Fixed delivery schedules with quantities that suit your needs, ensuring your business is always stocked.',
+      'why.c4t': 'Daily Follow-up',
+      'why.c4d': 'Continuous communication to track your orders and ensure on-time delivery without delay.',
+      'coverage.eyebrow': 'Wide Coverage',
+      'coverage.title': 'Our Fleet Covers All Regions of the Kingdom',
+      'coverage.sub': 'Regular delivery with our own fleet to our customers across all regions of Saudi Arabia.',
+      'products.eyebrow': 'Jory Product Range',
+      'products.title': 'A Complete Range That Covers All Your Needs',
+      'products.sub': 'All our products are available in sizes and sectors that suit the needs of markets, restaurants and catering alike.',
+      'products.sectorMarket': 'Retail &amp; Wholesale Markets Sector',
+      'products.sectorFood': 'Restaurants &amp; Catering Sector',
+      'products.catTortilla': 'Tortilla Wraps',
+      'products.catBurger': 'Burger Buns',
+      'products.catRoll': 'Sandwich Rolls',
+      'products.catJumbo': 'Jumbo Sandwich',
+      'products.catToast': 'Toast Bread',
+      'products.sizeLabel': 'Size:',
+      'prod.tortWhite': 'White Flour Tortilla',
+      'prod.tortWheat': 'Whole Wheat Tortilla',
+      'prod.tortSpicy': 'Spicy Tortilla',
+      'prod.bunPlain': 'Plain Burger Buns',
+      'prod.bunSesame': 'Sesame Burger Buns',
+      'prod.rollMkt': 'Plain Sandwich Roll',
+      'prod.rollFood': 'Plain - Sesame - Potato Sandwich Roll',
+      'prod.jumboMkt': 'Sesame Jumbo Sandwich',
+      'prod.jumboFood': 'Sesame - Plain - Brioche - Potato Jumbo Sandwich',
+      'prod.toastWhite': 'White Toast Bread',
+      'prod.toastWheat': 'Whole Wheat Toast Bread',
+      'size.w6_8_10': '6 - 8 - 10 inch',
+      'size.8': '8 inch',
+      'size.4': '4 inch',
+      'size.18cm': '18 cm',
+      'size.24cm': '24 cm',
+      'size.600g': '600 grams',
+      'size.w6_8_10_12': '6 - 8 - 10 - 12 inch',
+      'size.mini': 'Mini 2.8 - 3.7 - 4 inch',
+      'proof.eyebrow': 'Jory Bakery Factory',
+      'proof.title': 'We provide daily supply to wholesale markets &amp; supermarkets, restaurants &amp; cafés, and catering &amp; food supply across all regions of the Kingdom',
+      'proof.check1': 'Fresh baked goods daily',
+      'proof.check2': 'Competitive wholesale prices',
+      'proof.check3': 'Regular supply with quantities that suit your needs',
+      'proof.cardTitle': 'Before choosing a supplier...',
+      'proof.cardDesc': 'Try the quality yourself. Order your samples now and contact us for supply orders.',
+      'proof.cardBtn': 'View Product List',
+      'proof.whatsapp': 'WhatsApp',
+      'proof.call': 'Call',
+      'footer.brand': 'Jory Food Industries Factory',
+      'footer.tagline': 'Produced by Al-Maseka Trading Co. on behalf of the brand owners',
+      'footer.addr1': 'Kingdom of Saudi Arabia — Riyadh',
+      'footer.addr2': 'P.O. Box 58123 Riyadh 11594',
+      'footer.mapLink': 'View Factory Location on Map',
+      'footer.copyright': '© All rights reserved to Jory Food Industries Factory',
+      'meta.title': 'Jory Bakery Factory — Wholesale Supply for Restaurants, Cafés &amp; Grocery Stores Across the Kingdom',
+      'meta.desc': 'Jory.. Your ideal partner in the world of baked goods. Wholesale supply for wholesale markets &amp; supermarkets, restaurants &amp; cafés, and catering &amp; food supply: tortillas, burger buns, sandwich rolls and toast bread. Production exceeding 100,000 pieces daily, competitive wholesale prices, and a fleet covering all regions of Saudi Arabia.'
+    }
+  };
+
+  // capture the original Arabic content straight from the DOM so it's always 100% accurate
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    translations.ar[el.getAttribute('data-i18n')] = el.innerHTML;
+  });
+  translations.ar['meta.title'] = document.title;
+  const metaDescTag = document.querySelector('meta[name="description"]');
+  translations.ar['meta.desc'] = metaDescTag ? metaDescTag.getAttribute('content') : '';
+
+  const langToggle = document.getElementById('langToggle');
+
+  function applyLanguage(lang){
+    const dict = translations[lang] || translations.ar;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    if(dict['meta.title']) document.title = dict['meta.title'];
+    if(metaDescTag && dict['meta.desc']) metaDescTag.setAttribute('content', dict['meta.desc']);
+    langToggle.textContent = lang === 'ar' ? 'English' : 'العربية';
+    localStorage.setItem('jory_lang', lang);
+  }
+
+  let currentLang = localStorage.getItem('jory_lang') || 'ar';
+  applyLanguage(currentLang);
+
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'ar' ? 'en' : 'ar';
+    applyLanguage(currentLang);
+  });
 </script>
 </body>
 </html>
