@@ -116,6 +116,15 @@
   .cat-title h3{font-family:'Lalezar',sans-serif;color:var(--red-deep);font-size:1.55rem;}
   .cat-title .line{flex:1;height:2px;background:linear-gradient(90deg, rgba(194,27,46,.35), transparent);}
 
+  .sector-block{margin-bottom:64px;}
+  .sector-block:last-child{margin-bottom:0;}
+  .sector-heading{display:flex;align-items:center;gap:16px;margin-bottom:36px;padding-bottom:16px;
+    border-bottom:2px solid rgba(194,27,46,.18);}
+  .sector-heading .ic{width:48px;height:48px;border-radius:14px;background:var(--red);color:var(--white);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .sector-heading .ic svg{width:24px;height:24px;}
+  .sector-heading h2{font-family:'Lalezar',sans-serif;color:var(--red-deep);font-size:clamp(1.5rem,3.2vw,2rem);}
+
   .prod-subgroup{margin-bottom:26px;}
   .prod-subgroup:last-child{margin-bottom:0;}
   .prod-subtitle{display:inline-flex;align-items:center;gap:8px;background:rgba(194,27,46,.09);color:var(--red);
@@ -213,6 +222,10 @@
     .coverage p.sub{margin-bottom:32px;}
 
     .products{padding:8px 0 56px;}
+    .sector-block{margin-bottom:40px;}
+    .sector-heading{margin-bottom:24px;padding-bottom:12px;gap:12px;}
+    .sector-heading .ic{width:38px;height:38px;border-radius:11px;}
+    .sector-heading .ic svg{width:19px;height:19px;}
     .cat-block{margin-bottom:36px;}
     .cat-title{margin-bottom:16px;gap:10px;}
     .cat-title .num{width:32px;height:32px;font-size:.95rem;}
@@ -352,15 +365,19 @@
        
     </div>
 
-    <!-- التورتيلا -->
-    <div class="cat-block">
-      <div class="cat-title reveal">
-        <span class="num">1</span>
-        <h3>لفائف التورتيلا</h3>
-        <span class="line"></span>
+    <!-- ============ قطاع الأسواق ============ -->
+    <div class="sector-block">
+      <div class="sector-heading reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></div>
+        <h2>قطاع الأسواق</h2>
       </div>
-      <div class="prod-subgroup reveal">
-        <span class="prod-subtitle">قطاع الأسواق</span>
+
+      <div class="cat-block">
+        <div class="cat-title reveal">
+          <span class="num">1</span>
+          <h3>لفائف التورتيلا</h3>
+          <span class="line"></span>
+        </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/tortilla-white-market.webp" alt="تورتيلا أبيض - أسواق"></div>
@@ -392,8 +409,114 @@
         </div>
       </div>
 
-      <div class="prod-subgroup reveal">
-        <span class="prod-subtitle">قطاع المطاعم والإعاشة</span>
+      <div class="cat-block">
+        <div class="cat-title reveal">
+          <span class="num">2</span>
+          <h3>خبز البرجر</h3>
+          <span class="line"></span>
+        </div>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/bun-plain.webp" alt="خبز برجر سادة - أسواق"></div>
+            <div class="prod-body">
+              <h4>خبز برجر سادة</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>4 إنش</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/bun-sesame.webp" alt="خبز برجر بالسمسم - أسواق"></div>
+            <div class="prod-body">
+              <h4>خبز برجر بالسمسم</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>4 إنش</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-title reveal">
+          <span class="num">3</span>
+          <h3>ساندويتش رول</h3>
+          <span class="line"></span>
+        </div>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/roll-white.webp" alt="ساندويتش رول سادة - أسواق"></div>
+            <div class="prod-body">
+              <h4>ساندويتش رول سادة</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>18 سم</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-title reveal">
+          <span class="num">4</span>
+          <h3>ساندويتش جامبو</h3>
+          <span class="line"></span>
+        </div>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/jumbo-sesame.webp" alt="ساندويتش جامبو بالسمسم - أسواق"></div>
+            <div class="prod-body">
+              <h4>ساندويتش جامبو بالسمسم</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>24 سم</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-title reveal">
+          <span class="num">5</span>
+          <h3>خبز توست</h3>
+          <span class="line"></span>
+        </div>
+        <div class="prod-grid">
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/toast-white.webp" alt="خبز توست أبيض"></div>
+            <div class="prod-body">
+              <h4>خبز توست أبيض</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>600 جرام</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card reveal">
+            <div class="prod-img"><img src="assets/products/toast-wheat.webp" alt="خبز توست بر"></div>
+            <div class="prod-body">
+              <h4>خبز توست بر</h4>
+              <div class="prod-meta">
+                <div><b>الحجم:</b><span>600 جرام</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ قطاع المطاعم والإعاشة ============ -->
+    <div class="sector-block">
+      <div class="sector-heading reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h2>قطاع المطاعم والإعاشة</h2>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-title reveal">
+          <span class="num">1</span>
+          <h3>لفائف التورتيلا</h3>
+          <span class="line"></span>
+        </div>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/tortilla-white.webp" alt="تورتيلا أبيض - إعاشة"></div>
@@ -424,41 +547,13 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- خبز البرجر -->
-    <div class="cat-block">
-      <div class="cat-title reveal">
-        <span class="num">2</span>
-        <h3>خبز البرجر</h3>
-        <span class="line"></span>
-      </div>
-      <div class="prod-subgroup reveal">
-        <span class="prod-subtitle">قطاع الأسواق</span>
-        <div class="prod-grid">
-          <div class="prod-card reveal">
-            <div class="prod-img"><img src="assets/products/bun-plain.webp" alt="خبز برجر سادة - أسواق"></div>
-            <div class="prod-body">
-              <h4>خبز برجر سادة</h4>
-              <div class="prod-meta">
-                <div><b>الحجم:</b><span>4 إنش</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="prod-card reveal">
-            <div class="prod-img"><img src="assets/products/bun-sesame.webp" alt="خبز برجر بالسمسم - أسواق"></div>
-            <div class="prod-body">
-              <h4>خبز برجر بالسمسم</h4>
-              <div class="prod-meta">
-                <div><b>الحجم:</b><span>4 إنش</span></div>
-              </div>
-            </div>
-          </div>
+      <div class="cat-block">
+        <div class="cat-title reveal">
+          <span class="num">2</span>
+          <h3>خبز البرجر</h3>
+          <span class="line"></span>
         </div>
-      </div>
-
-      <div class="prod-subgroup reveal">
-        <span class="prod-subtitle">قطاع المطاعم والإعاشة</span>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/bun-plain-bag.webp" alt="خبز برجر سادة - إعاشة"></div>
@@ -480,32 +575,13 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ساندويتش رول -->
-    <div class="cat-block">
-      <div class="cat-title reveal">
-        <span class="num">3</span>
-        <h3>ساندويتش رول</h3>
-        <span class="line"></span>
-      </div>
-      <div class="prod-subgroup reveal">
-        <span class="prod-subtitle">قطاع الأسواق</span>
-        <div class="prod-grid">
-          <div class="prod-card reveal">
-            <div class="prod-img"><img src="assets/products/roll-white.webp" alt="ساندويتش رول سادة - أسواق"></div>
-            <div class="prod-body">
-              <h4>ساندويتش رول سادة</h4>
-              <div class="prod-meta">
-                <div><b>الحجم:</b><span>18 سم</span></div>
-              </div>
-            </div>
-          </div>
+      <div class="cat-block">
+        <div class="cat-title reveal">
+          <span class="num">3</span>
+          <h3>ساندويتش رول</h3>
+          <span class="line"></span>
         </div>
-      </div>
-
-      <div class="prod-subgroup reveal">
-        <span class="prod-subtitle">قطاع المطاعم والإعاشة</span>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/roll-plain-bag.webp" alt="ساندويتش رول سادة - بالسمسم - بطاطس - إعاشة"></div>
@@ -518,32 +594,13 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ساندويتش جامبو -->
-    <div class="cat-block">
-      <div class="cat-title reveal">
-        <span class="num">4</span>
-        <h3>ساندويتش جامبو</h3>
-        <span class="line"></span>
-      </div>
-      <div class="prod-subgroup reveal">
-        <span class="prod-subtitle">قطاع الأسواق</span>
-        <div class="prod-grid">
-          <div class="prod-card reveal">
-            <div class="prod-img"><img src="assets/products/jumbo-sesame.webp" alt="ساندويتش جامبو بالسمسم - أسواق"></div>
-            <div class="prod-body">
-              <h4>ساندويتش جامبو بالسمسم</h4>
-              <div class="prod-meta">
-                <div><b>الحجم:</b><span>24 سم</span></div>
-              </div>
-            </div>
-          </div>
+      <div class="cat-block">
+        <div class="cat-title reveal">
+          <span class="num">4</span>
+          <h3>ساندويتش جامبو</h3>
+          <span class="line"></span>
         </div>
-      </div>
-
-      <div class="prod-subgroup reveal">
-        <span class="prod-subtitle">قطاع المطاعم والإعاشة</span>
         <div class="prod-grid">
           <div class="prod-card reveal">
             <div class="prod-img"><img src="assets/products/jumbo-plain-bag.webp" alt="ساندويتش جامبو بالسمسم - سادة - بريوش - بطاطس - إعاشة"></div>
@@ -552,37 +609,6 @@
               <div class="prod-meta">
                 <div><b>الحجم:</b><span>24 سم</span></div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- خبز توست -->
-    <div class="cat-block">
-      <div class="cat-title reveal">
-        <span class="num">5</span>
-        <h3>خبز توست</h3>
-        <span class="line"></span>
-      </div>
-      <div class="prod-grid">
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/toast-white.webp" alt="خبز توست أبيض"></div>
-          <div class="prod-body">
-            <h4>خبز توست أبيض</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>600 جرام</span></div>
-              <div><b>القطاع:</b><span>أسواق</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="prod-card reveal">
-          <div class="prod-img"><img src="assets/products/toast-wheat.webp" alt="خبز توست بر"></div>
-          <div class="prod-body">
-            <h4>خبز توست بر</h4>
-            <div class="prod-meta">
-              <div><b>الحجم:</b><span>600 جرام</span></div>
-              <div><b>القطاع:</b><span>أسواق</span></div>
             </div>
           </div>
         </div>
