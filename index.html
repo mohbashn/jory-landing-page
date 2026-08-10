@@ -10,269 +10,22 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --red:#C21B2E;
-    --red-dark:#8F1220;
-    --red-deep:#500B12;
-    --gold:#E3A23D;
-    --gold-light:#F4C978;
-    --cream:#FBF6EC;
-    --white:#FFFFFF;
-    --ink:#291410;
-    --ink-soft:#6B4E44;
-    --green:#2E7D4F;
-    --shadow:0 14px 34px rgba(80,11,18,.16);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  #hero, #products, #contact{scroll-margin-top:90px;}
-  @media (max-width:600px){ #hero, #products, #contact{scroll-margin-top:64px;} }
-  body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.6;}
-  h1,h2,h3,.display{font-family:'Lalezar',sans-serif;font-weight:400;letter-spacing:.5px;}
-  a{text-decoration:none;color:inherit;}
-  ul{list-style:none;}
-  img{display:block;max-width:100%;}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
-  section{position:relative;}
-
-
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(194,27,46,.09);color:var(--red);
-    font-weight:800;font-size:.82rem;padding:8px 18px;border-radius:99px;margin-bottom:16px;}
-  .eyebrow svg{width:16px;height:16px;}
-
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:12px;
-    font-weight:800;font-size:1rem;transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
-    white-space:nowrap;border:0;cursor:pointer;}
-  .btn svg{width:20px;height:20px;flex-shrink:0;}
-  .btn-primary{background:var(--red);color:var(--white);box-shadow:0 10px 24px rgba(194,27,46,.35);}
-  .btn-primary:hover{background:var(--red-dark);transform:translateY(-2px);}
-  .btn-whatsapp{background:#25D366;color:var(--white);box-shadow:0 10px 24px rgba(37,211,102,.35);}
-  .btn-whatsapp:hover{background:#1DA851;transform:translateY(-2px);}
-  .btn-outline-light{border:1.5px solid rgba(255,255,255,.75);color:var(--white);background:rgba(255,255,255,.06);backdrop-filter:blur(4px);}
-  .btn-outline-light:hover{background:rgba(255,255,255,.16);}
-  .btn-lg{padding:19px 38px;font-size:1.08rem;}
-  .cta-row{display:flex;flex-wrap:wrap;gap:16px;}
-
-  /* ---------- top bar ---------- */
-  .topbar{position:fixed;top:0;right:0;left:0;z-index:200;display:flex;align-items:center;justify-content:center;
-    padding:14px 5%;background:rgba(251,246,236,.92);backdrop-filter:blur(8px);box-shadow:0 2px 16px rgba(41,20,16,.08);
-    transition:padding .3s ease;}
-  .topbar.scrolled{padding:8px 5%;box-shadow:0 4px 20px rgba(41,20,16,.14);}
-  .topbar-logo-link{display:flex;align-items:center;}
-  .topbar .logo{height:62px;width:auto;transition:height .3s ease;}
-  .topbar.scrolled .logo{height:44px;}
-  .lang-toggle{position:absolute;top:50%;inset-inline-end:5%;transform:translateY(-50%);
-    display:flex;align-items:center;justify-content:center;text-align:center;
-    background:var(--red);color:var(--white);border:0;border-radius:99px;padding:9px 18px;
-    font-weight:800;font-size:.82rem;font-family:'Tajawal',sans-serif;cursor:pointer;line-height:1;
-    transition:background .2s ease, padding .3s ease;}
-  .lang-toggle:hover{background:var(--red-dark);}
-
-  /* ---------- hero ---------- */
-  .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;
-    background:
-      linear-gradient(115deg, rgba(80,11,18,.94) 0%, rgba(111,15,24,.86) 38%, rgba(194,27,46,.55) 68%, rgba(80,11,18,.75) 100%),
-      url('assets/factory.webp') center/cover no-repeat;
-  }
-  .hero-inner{max-width:760px;}
-  .hero .eyebrow{background:rgba(255,255,255,.14);color:var(--gold-light);}
-  .hero h1{color:var(--white);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.25;margin-bottom:22px;text-shadow:0 4px 18px rgba(0,0,0,.25);}
-  .hero h1 span{color:var(--gold-light);}
-  .hero p.lead{color:rgba(255,255,255,.92);font-size:clamp(1.02rem,2vw,1.22rem);margin-bottom:30px;max-width:640px;}
-  .hero-audience{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
-  .hero-audience span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.22);color:var(--white);font-weight:700;font-size:.86rem;padding:9px 16px;border-radius:99px;}
-  .hero-audience svg{width:15px;height:15px;background:var(--gold);color:var(--red-deep);border-radius:50%;padding:3px;flex-shrink:0;}
-
-  /* ---------- fleet coverage ---------- */
-  .coverage{padding:80px 0;background:var(--red-deep);color:var(--white);text-align:center;}
-  .coverage .eyebrow{background:rgba(255,255,255,.14);color:var(--gold-light);}
-  .coverage h2{color:var(--white);font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:14px;}
-  .coverage p.sub{color:rgba(255,255,255,.8);max-width:600px;margin:0 auto 44px;}
-  .coverage-body{display:flex;align-items:center;justify-content:center;max-width:640px;margin:0 auto;}
-  .coverage-map{width:100%;min-width:0;}
-  .coverage-map img{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 20px 46px rgba(0,0,0,.32);}
-
-  /* ---------- section heading ---------- */
-  .sec-head{text-align:center;max-width:680px;margin:0 auto 46px;}
-  .sec-head h2{font-size:clamp(1.9rem,4vw,2.6rem);color:var(--red-deep);margin-bottom:14px;}
-  .sec-head p{color:var(--ink-soft);font-size:1.02rem;}
-  .sec-head .btn{margin-top:18px;}
-
-  /* ---------- why us ---------- */
-  .why{padding:90px 0 70px;}
-  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
-  .why-card{background:var(--white);border-radius:18px;padding:32px 26px;box-shadow:var(--shadow);text-align:center;
-    border-bottom:4px solid var(--gold);}
-  .why-card .ic{width:60px;height:60px;border-radius:16px;background:rgba(194,27,46,.09);display:flex;align-items:center;
-    justify-content:center;margin:0 auto 18px;}
-  .why-card svg{width:30px;height:30px;color:var(--red);}
-  .why-card h3{font-family:'Tajawal',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:10px;color:var(--ink);}
-  .why-card p{color:var(--ink-soft);font-size:.92rem;}
-  @media (max-width:860px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:520px){ .why-grid{grid-template-columns:1fr;} }
-
-  /* ---------- products ---------- */
-  .products{padding:20px 0 90px;background:linear-gradient(180deg,var(--cream) 0%, #F6ECDA 100%);}
-  .cat-block{margin-bottom:52px;}
-  .cat-title{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
-  .cat-title .num{width:38px;height:38px;border-radius:50%;background:var(--red);color:var(--white);
-    display:flex;align-items:center;justify-content:center;font-family:'Lalezar',sans-serif;font-size:1.1rem;flex-shrink:0;}
-  .cat-title h3{font-family:'Lalezar',sans-serif;color:var(--red-deep);font-size:1.55rem;}
-  .cat-title .line{flex:1;height:2px;background:linear-gradient(90deg, rgba(194,27,46,.35), transparent);}
-
-  .sector-block{margin-bottom:64px;}
-  .sector-block:last-child{margin-bottom:0;}
-  .sector-heading{display:flex;align-items:center;gap:16px;margin-bottom:36px;padding-bottom:16px;
-    border-bottom:2px solid rgba(194,27,46,.18);}
-  .sector-heading .ic{width:48px;height:48px;border-radius:14px;background:var(--red);color:var(--white);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-  .sector-heading .ic svg{width:24px;height:24px;}
-  .sector-heading h2{font-family:'Lalezar',sans-serif;color:var(--red-deep);font-size:clamp(1.5rem,3.2vw,2rem);}
-
-  .prod-subgroup{margin-bottom:26px;}
-  .prod-subgroup:last-child{margin-bottom:0;}
-  .prod-subtitle{display:inline-flex;align-items:center;gap:8px;background:rgba(194,27,46,.09);color:var(--red);
-    font-weight:800;font-size:.82rem;padding:7px 16px;border-radius:99px;margin-bottom:14px;}
-
-  .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;}
-  .prod-card{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(80,11,18,.08);
-    transition:transform .3s ease, box-shadow .3s ease;display:flex;flex-direction:column;}
-  .prod-card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(80,11,18,.16);}
-  .prod-img{background:radial-gradient(circle at 50% 30%, #fff 0%, #FBF1E0 100%);padding:18px;display:flex;
-    align-items:center;justify-content:center;height:180px;}
-  .prod-img img{max-height:150px;width:auto;object-fit:contain;}
-  .prod-body{padding:16px 18px 20px;border-top:1px solid #F1E4CE;}
-  .prod-body h4{font-weight:800;font-size:1rem;margin-bottom:10px;color:var(--ink);}
-  .prod-meta{display:flex;flex-direction:column;gap:6px;font-size:.82rem;color:var(--ink-soft);}
-  .prod-meta div{display:flex;gap:6px;}
-  .prod-meta b{color:var(--red);font-weight:800;min-width:52px;}
-  .prod-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
-  .prod-tags span{background:rgba(194,27,46,.08);color:var(--red-dark);font-size:.72rem;font-weight:700;
-    padding:4px 10px;border-radius:99px;}
-
-  /* ---------- proof / checklist ---------- */
-  .proof{padding:90px 0;background:var(--red-deep);color:var(--white);position:relative;overflow:hidden;}
-  .proof-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
-  .proof h2{font-size:clamp(1.8rem,3.6vw,2.5rem);margin-bottom:16px;color:var(--white);}
-  .proof>.wrap>.proof-inner p.lead{color:rgba(255,255,255,.85);margin-bottom:26px;font-size:1.05rem;}
-  .checklist{display:flex;flex-direction:column;gap:14px;margin-bottom:30px;}
-  .checklist li{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.02rem;}
-  .checklist svg{width:24px;height:24px;background:var(--gold);color:var(--red-deep);border-radius:50%;padding:5px;flex-shrink:0;}
-  .proof-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:34px 30px;
-    backdrop-filter:blur(6px);text-align:center;}
-  .proof-card .display{color:var(--gold-light);font-size:1.5rem;margin-bottom:8px;}
-  .proof-card p{color:rgba(255,255,255,.82);margin-bottom:22px;font-size:.95rem;}
-  .proof-card .phone{font-family:'Lalezar',sans-serif;font-size:1.9rem;color:var(--white);letter-spacing:2px;
-    direction:ltr;display:block;margin-bottom:8px;}
-  .proof-card .email-link{display:inline-flex;align-items:center;gap:8px;color:var(--white);
-    font-size:1.15rem;font-weight:700;direction:ltr;margin-bottom:20px;transition:color .2s ease;
-    padding:6px 4px;border-bottom:1.5px dashed rgba(255,255,255,.4);cursor:pointer;}
-  .proof-card .email-link:hover{color:var(--gold-light);border-color:var(--gold-light);}
-  .proof-card .email-link svg{width:19px;height:19px;flex-shrink:0;}
-  @media (max-width:480px){ .proof-card .email-link{font-size:.95rem;} }
-  @media (max-width:900px){ .proof-inner{grid-template-columns:1fr;} }
-
-  /* ---------- final CTA ---------- */
-  .final-cta{padding:80px 0;text-align:center;background:var(--cream);}
-  .final-cta h2{color:var(--red-deep);font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:14px;}
-  .final-cta p{color:var(--ink-soft);max-width:560px;margin:0 auto 30px;font-size:1.02rem;}
-  .final-cta .cta-row{justify-content:center;}
-
-  /* ---------- footer ---------- */
-  footer{background:var(--ink);color:rgba(255,255,255,.7);padding:44px 0 26px;font-size:.86rem;}
-  footer .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-bottom:24px;
-    border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:20px;}
-  footer .foot-brand{display:flex;align-items:center;gap:12px;}
-  footer .foot-brand img{height:136px;filter:brightness(0) invert(1);opacity:.9;}
-  footer address{font-style:normal;line-height:1.9;}
-  footer .map-link{display:inline-flex;align-items:center;gap:6px;color:var(--gold-light);font-weight:700;
-    margin-top:8px;transition:color .2s ease;}
-  footer .map-link:hover{color:var(--gold);text-decoration:underline;}
-  footer .map-link svg{width:15px;height:15px;flex-shrink:0;}
-  .social-links{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:22px;}
-  .social-links a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);
-    display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);
-    transition:background .25s ease, color .25s ease, transform .25s ease;}
-  .social-links a:hover{background:var(--gold);color:var(--red-deep);transform:translateY(-3px);}
-  .social-links svg{width:18px;height:18px;}
-  footer .copyright{text-align:center;color:rgba(255,255,255,.45);font-size:.78rem;}
-
-  /* ---------- floating whatsapp ---------- */
-  .float-wa{position:fixed;bottom:24px;left:24px;z-index:300;width:60px;height:60px;border-radius:50%;
-    background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(37,211,102,.5);
-    animation:pulse 2.4s infinite;}
-  .float-wa svg{width:30px;height:30px;color:#fff;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
-
-  @media (max-width:600px){
-    .wrap{padding:0 18px;}
-
-    /* topbar */
-    .topbar{padding:10px 18px;}
-    .topbar.scrolled{padding:6px 18px;}
-    .topbar .logo{height:44px;}
-    .topbar.scrolled .logo{height:32px;}
-    .lang-toggle{padding:7px 13px;font-size:.74rem;}
-
-    /* hero */
-    .hero{padding:84px 0 56px;min-height:0;}
-    .hero h1{font-size:1.9rem;margin-bottom:16px;}
-    .hero p.lead{font-size:.98rem;margin-bottom:22px;}
-    .hero-audience{gap:8px;margin-bottom:22px;}
-    .hero-audience span{font-size:.78rem;padding:7px 12px;}
-
-    /* generic cta rows stack full-width for easy tapping */
-    .cta-row{flex-direction:column;gap:12px;}
-    .cta-row .btn{width:100%;justify-content:center;}
-    .btn-lg{padding:16px 24px;font-size:1rem;}
-
-    /* section rhythm */
-    .sec-head{margin-bottom:30px;}
-    .sec-head p{font-size:.94rem;}
-    .why{padding:56px 0 36px;}
-    .why-grid{gap:16px;}
-    .why-card{padding:26px 20px;}
-
-    .coverage{padding:52px 0;}
-    .coverage p.sub{margin-bottom:32px;}
-
-    .products{padding:8px 0 56px;}
-    .sector-block{margin-bottom:40px;}
-    .sector-heading{margin-bottom:24px;padding-bottom:12px;gap:12px;}
-    .sector-heading .ic{width:38px;height:38px;border-radius:11px;}
-    .sector-heading .ic svg{width:19px;height:19px;}
-    .cat-block{margin-bottom:36px;}
-    .cat-title{margin-bottom:16px;gap:10px;}
-    .cat-title .num{width:32px;height:32px;font-size:.95rem;}
-    .cat-title h3{font-size:1.28rem;}
-    .prod-grid{gap:14px;}
-    .prod-img{height:150px;padding:14px;}
-    .prod-img img{max-height:120px;}
-    .prod-body{padding:14px 16px 16px;}
-
-    .proof{padding:52px 0;}
-    .proof-inner{gap:32px;}
-    .proof h2{font-size:1.6rem;}
-    .proof-card{padding:26px 20px;}
-    .proof-card .phone{font-size:1.5rem;}
-    .proof-card .cta-row{max-width:320px;margin:0 auto;}
-
-    .final-cta{padding:52px 0;}
-    .final-cta .cta-row{max-width:320px;margin:0 auto;}
-
-    /* footer */
-    footer{padding:36px 0 22px;text-align:center;}
-    footer .foot-inner{flex-direction:column;align-items:center;text-align:center;gap:20px;}
-    footer .foot-brand{flex-direction:column;}
-
-    .float-wa{width:52px;height:52px;bottom:18px;left:18px;}
-    .float-wa svg{width:26px;height:26px;}
-  }
-</style>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+<!-- Icon sprite: each icon used more than once on the page is defined exactly
+     once here and referenced elsewhere via <use>, instead of repeating its
+     SVG path data at every call site. -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.99.585 3.842 1.591 5.398L2 22l4.735-1.562A9.953 9.953 0 0 0 12.001 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.2a8.174 8.174 0 0 1-4.396-1.276l-.315-.19-3.11 1.027 1.05-3.033-.205-.312A8.173 8.173 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.2 3.678 8.2 8.2 0 4.522-3.679 8.2-8.2 8.2z"/></symbol>
+  <symbol id="icon-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 20l-3-3 3-3"/></symbol>
+  <symbol id="icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></symbol>
+  <symbol id="icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></symbol>
+  <symbol id="icon-call" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></symbol>
+</svg>
 
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
@@ -289,26 +42,26 @@
 
       <div class="hero-audience">
         <span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <svg><use href="#icon-check"/></svg>
           <span data-i18n="hero.aud1">أسواق الجملة والسوبر ماركت</span>
         </span>
         <span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <svg><use href="#icon-check"/></svg>
           <span data-i18n="hero.aud2">المطاعم والكافيهات</span>
         </span>
         <span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <svg><use href="#icon-check"/></svg>
           <span data-i18n="hero.aud3">الإعاشة والتموين</span>
         </span>
       </div>
 
       <div class="cta-row">
         <a class="btn btn-whatsapp btn-lg" href="https://wa.me/966550770645?text=مرحباً%2C%20أرغب%20بالتواصل%20مع%20قسم%20المبيعات" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.99.585 3.842 1.591 5.398L2 22l4.735-1.562A9.953 9.953 0 0 0 12.001 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.2a8.174 8.174 0 0 1-4.396-1.276l-.315-.19-3.11 1.027 1.05-3.033-.205-.312A8.173 8.173 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.2 3.678 8.2 8.2 0 4.522-3.679 8.2-8.2 8.2z"/></svg>
+          <svg><use href="#icon-whatsapp"/></svg>
           <span data-i18n="hero.ctaSales">تواصل مع قسم المبيعات</span>
         </a>
         <a class="btn btn-outline-light btn-lg" href="#products">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 20l-3-3 3-3"/></svg>
+          <svg><use href="#icon-swap"/></svg>
           <span data-i18n="hero.ctaProducts">قائمة المنتجات</span>
         </a>
       </div>
@@ -338,12 +91,12 @@
         <p data-i18n="why.c2d">تسعير خاص بالجملة يرفع هامش ربحكم مقارنة بالتوريد التقليدي، بلا وسطاء وبلا تكاليف خفية.</p>
       </div>
       <div class="why-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></div>
+        <div class="ic"><svg><use href="#icon-truck"/></svg></div>
         <h3 data-i18n="why.c3t">أسطول توريد منتظم</h3>
         <p data-i18n="why.c3d">جدولة توصيل ثابتة بكميات تناسب احتياجكم، لضمان توفر المنتج في منشأتكم دائماً.</p>
       </div>
       <div class="why-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="ic"><svg><use href="#icon-call"/></svg></div>
         <h3 data-i18n="why.c4t">متابعة يومية</h3>
         <p data-i18n="why.c4d">تواصل مستمر لمتابعة طلباتكم وضمان وصول التوريد في وقته دون أي تأخير.</p>
       </div>
@@ -356,7 +109,7 @@
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
+        <svg><use href="#icon-truck"/></svg>
         <span data-i18n="coverage.eyebrow">تغطية واسعة</span>
       </div>
       <h2 data-i18n="coverage.title">أسطولنا يغطي جميع مناطق المملكة</h2>
@@ -375,7 +128,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 20l-3-3 3-3"/></svg>
+        <svg><use href="#icon-swap"/></svg>
         <span data-i18n="products.eyebrow">سلة منتجات جوري</span>
       </div>
       <h2 data-i18n="products.title">تشكيلة متكاملة تغطي كل احتياجاتكم</h2>
@@ -386,7 +139,7 @@
     <!-- ============ قطاع الأسواق ============ -->
     <div class="sector-block">
       <div class="sector-heading reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></div>
+        <div class="ic"><svg><use href="#icon-truck"/></svg></div>
         <h2 data-i18n="products.sectorMarket">قطاع الأسواق</h2>
       </div>
 
@@ -525,7 +278,7 @@
     <!-- ============ قطاع المطاعم والإعاشة ============ -->
     <div class="sector-block">
       <div class="sector-heading reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <div class="ic"><svg><use href="#icon-building"/></svg></div>
         <h2 data-i18n="products.sectorFood">قطاع المطاعم والإعاشة</h2>
       </div>
 
@@ -642,21 +395,21 @@
     <div class="proof-inner">
       <div class="reveal">
         <div class="eyebrow" style="background:rgba(255,255,255,.14);color:var(--gold-light);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+          <svg><use href="#icon-building"/></svg>
           <span data-i18n="proof.eyebrow">مصنع مخبوزات جوري</span>
         </div>
         <h2 data-i18n="proof.title">نوفر توريدًا يوميًا لأسواق الجملة والسوبر ماركت، والمطاعم والكافيهات، والإعاشة والتموين في جميع مناطق المملكة</h2>
         <ul class="checklist">
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <svg><use href="#icon-check"/></svg>
             <span data-i18n="proof.check1">مخبوزات طازجة يوميًا</span>
           </li>
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <svg><use href="#icon-check"/></svg>
             <span data-i18n="proof.check2">أسعار جملة منافسة</span>
           </li>
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <svg><use href="#icon-check"/></svg>
             <span data-i18n="proof.check3">توريد منتظم بكميات تناسب احتياجكم</span>
           </li>
         </ul>
@@ -665,21 +418,21 @@
         <div class="display" data-i18n="proof.cardTitle">قبل اعتماد المورد...</div>
         <p data-i18n="proof.cardDesc">جرّب الجودة بنفسك. اطلب عيناتك الآن وتواصل معنا لطلبات التوريد.</p>
         <a class="btn btn-outline-light" href="#products" style="margin-bottom:22px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 20l-3-3 3-3"/></svg>
+          <svg><use href="#icon-swap"/></svg>
           <span data-i18n="proof.cardBtn">اطلع على قائمة المنتجات</span>
         </a>
         <span class="phone" dir="ltr">+966 55 077 0645</span>
         <a class="email-link" href="mailto:jury-bakery@almaseka.com.sa">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          <svg><use href="#icon-mail"/></svg>
           jury-bakery@almaseka.com.sa
         </a>
         <div class="cta-row" style="justify-content:center;">
           <a class="btn btn-whatsapp" href="https://wa.me/966550770645?text=مرحباً%2C%20أرغب%20بالتواصل%20بخصوص%20طلبات%20التوريد" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.99.585 3.842 1.591 5.398L2 22l4.735-1.562A9.953 9.953 0 0 0 12.001 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.2a8.174 8.174 0 0 1-4.396-1.276l-.315-.19-3.11 1.027 1.05-3.033-.205-.312A8.173 8.173 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.2 3.678 8.2 8.2 0 4.522-3.679 8.2-8.2 8.2z"/></svg>
+            <svg><use href="#icon-whatsapp"/></svg>
             <span data-i18n="proof.whatsapp">واتساب</span>
           </a>
           <a class="btn btn-outline-light" href="tel:+966550770645">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <svg><use href="#icon-call"/></svg>
             <span data-i18n="proof.call">اتصال</span>
           </a>
         </div>
@@ -725,7 +478,7 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3.2v13.5a3.3 3.3 0 1 1-2.3-3.14v-3.3a6.6 6.6 0 1 0 5.5 6.5V8.9a8.2 8.2 0 0 0 4.8 1.55V7.25A5 5 0 0 1 16.5 2z"/></svg>
       </a>
       <a href="mailto:jury-bakery@almaseka.com.sa" aria-label="البريد الإلكتروني">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+        <svg><use href="#icon-mail"/></svg>
       </a>
     </div>
     <div class="copyright" data-i18n="footer.copyright">© جميع الحقوق محفوظة لمصنع جوري للصناعات الغذائية</div>
@@ -733,123 +486,11 @@
 </footer>
 
 <a class="float-wa" href="https://wa.me/966550770645" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.99.585 3.842 1.591 5.398L2 22l4.735-1.562A9.953 9.953 0 0 0 12.001 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.2a8.174 8.174 0 0 1-4.396-1.276l-.315-.19-3.11 1.027 1.05-3.033-.205-.312A8.173 8.173 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.2 3.678 8.2 8.2 0 4.522-3.679 8.2-8.2 8.2z"/></svg>
+  <svg><use href="#icon-whatsapp"/></svg>
 </a>
 
 
-<script>
-  const topbar = document.querySelector('.topbar');
-  const onScroll = () => topbar.classList.toggle('scrolled', window.scrollY > 40);
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-</script>
-
-<script>
-  const translations = {
-    ar: {},
-    en: {
-      'hero.title': '<span>Jory Factory</span>.. Your Partner in Baking Success',
-      'hero.lead': 'We bake <b>more than 100,000 pieces</b> daily using the latest baking technology and consistent quality, with delivery covering every region of the Kingdom.',
-      'hero.aud1': 'Wholesale Markets &amp; Supermarkets',
-      'hero.aud2': 'Restaurants &amp; Cafés',
-      'hero.aud3': 'Catering &amp; Food Supply',
-      'hero.ctaSales': 'Contact Sales Team',
-      'hero.ctaProducts': 'Product List',
-      'why.eyebrow': 'Why Choose Jory as Your Supplier?',
-      'why.title': 'Your Ideal Partner in the World of Baked Goods',
-      'why.c1t': 'Consistent Quality',
-      'why.c1d': 'Strict production standards ensure the same quality in every order, no matter how often you reorder.',
-      'why.c2t': 'Competitive Prices',
-      'why.c2d': 'Special wholesale pricing that boosts your profit margin compared to traditional supply, with no middlemen and no hidden costs.',
-      'why.c3t': 'Regular Delivery Fleet',
-      'why.c3d': 'Fixed delivery schedules with quantities that suit your needs, ensuring your business is always stocked.',
-      'why.c4t': 'Daily Follow-up',
-      'why.c4d': 'Continuous communication to track your orders and ensure on-time delivery without delay.',
-      'coverage.eyebrow': 'Wide Coverage',
-      'coverage.title': 'Our Fleet Covers All Regions of the Kingdom',
-      'coverage.sub': 'Regular delivery with our own fleet to our customers across all regions of Saudi Arabia.',
-      'products.eyebrow': 'Jory Product Range',
-      'products.title': 'A Complete Range That Covers All Your Needs',
-      'products.sub': 'All our products are available in sizes and sectors that suit the needs of markets, restaurants and catering alike.',
-      'products.sectorMarket': 'Retail &amp; Wholesale Markets Sector',
-      'products.sectorFood': 'Restaurants &amp; Catering Sector',
-      'products.catTortilla': 'Tortilla Wraps',
-      'products.catBurger': 'Burger Buns',
-      'products.catRoll': 'Sandwich Rolls',
-      'products.catJumbo': 'Jumbo Sandwich',
-      'products.catToast': 'Toast Bread',
-      'products.sizeLabel': 'Size:',
-      'prod.tortWhite': 'White Flour Tortilla',
-      'prod.tortWheat': 'Whole Wheat Tortilla',
-      'prod.tortSpicy': 'Spicy Tortilla',
-      'prod.bunPlain': 'Plain Burger Buns',
-      'prod.bunSesame': 'Sesame Burger Buns',
-      'prod.rollMkt': 'Plain Sandwich Roll',
-      'prod.rollFood': 'Plain - Sesame - Potato Sandwich Roll',
-      'prod.jumboMkt': 'Sesame Jumbo Sandwich',
-      'prod.jumboFood': 'Sesame - Plain - Brioche - Potato Jumbo Sandwich',
-      'prod.toastWhite': 'White Toast Bread',
-      'prod.toastWheat': 'Whole Wheat Toast Bread',
-      'size.w6_8_10': '6 - 8 - 10 inch',
-      'size.8': '8 inch',
-      'size.4': '4 inch',
-      'size.18cm': '18 cm',
-      'size.24cm': '24 cm',
-      'size.600g': '600 grams',
-      'size.w6_8_10_12': '6 - 8 - 10 - 12 inch',
-      'size.mini': 'Mini 2.8 - 3.7 - 4 inch',
-      'proof.eyebrow': 'Jory Bakery Factory',
-      'proof.title': 'We provide daily supply to wholesale markets &amp; supermarkets, restaurants &amp; cafés, and catering &amp; food supply across all regions of the Kingdom',
-      'proof.check1': 'Fresh baked goods daily',
-      'proof.check2': 'Competitive wholesale prices',
-      'proof.check3': 'Regular supply with quantities that suit your needs',
-      'proof.cardTitle': 'Before choosing a supplier...',
-      'proof.cardDesc': 'Try the quality yourself. Order your samples now and contact us for supply orders.',
-      'proof.cardBtn': 'View Product List',
-      'proof.whatsapp': 'WhatsApp',
-      'proof.call': 'Call',
-      'footer.brand': 'Jory Food Industries Factory',
-      'footer.tagline': 'Produced by Al-Maseka Trading Co. on behalf of the brand owners',
-      'footer.addr1': 'Kingdom of Saudi Arabia — Riyadh',
-      'footer.addr2': 'P.O. Box 58123 Riyadh 11594',
-      'footer.mapLink': 'View Factory Location on Map',
-      'footer.copyright': '© All rights reserved to Jory Food Industries Factory',
-      'meta.title': 'Jory Bakery Factory — Wholesale Supply for Restaurants, Cafés &amp; Grocery Stores Across the Kingdom',
-      'meta.desc': 'Jory.. Your ideal partner in the world of baked goods. Wholesale supply for wholesale markets &amp; supermarkets, restaurants &amp; cafés, and catering &amp; food supply: tortillas, burger buns, sandwich rolls and toast bread. Production exceeding 100,000 pieces daily, competitive wholesale prices, and a fleet covering all regions of Saudi Arabia.'
-    }
-  };
-
-  // capture the original Arabic content straight from the DOM so it's always 100% accurate
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    translations.ar[el.getAttribute('data-i18n')] = el.innerHTML;
-  });
-  translations.ar['meta.title'] = document.title;
-  const metaDescTag = document.querySelector('meta[name="description"]');
-  translations.ar['meta.desc'] = metaDescTag ? metaDescTag.getAttribute('content') : '';
-
-  const langToggle = document.getElementById('langToggle');
-
-  function applyLanguage(lang){
-    const dict = translations[lang] || translations.ar;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if(dict[key] !== undefined) el.innerHTML = dict[key];
-    });
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    if(dict['meta.title']) document.title = dict['meta.title'];
-    if(metaDescTag && dict['meta.desc']) metaDescTag.setAttribute('content', dict['meta.desc']);
-    langToggle.textContent = lang === 'ar' ? 'English' : 'العربية';
-    localStorage.setItem('jory_lang', lang);
-  }
-
-  let currentLang = localStorage.getItem('jory_lang') || 'ar';
-  applyLanguage(currentLang);
-
-  langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'ar' ? 'en' : 'ar';
-    applyLanguage(currentLang);
-  });
-</script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
