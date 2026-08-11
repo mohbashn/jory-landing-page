@@ -55,6 +55,7 @@ const I18n = (() => {
       'prod.tortSpicy': 'Spicy Tortilla',
       'prod.bunPlain': 'Plain Burger Buns',
       'prod.bunSesame': 'Sesame Burger Buns',
+      'prod.bunBrioche': 'Brioche Burger Buns',
       'prod.rollMkt': 'Plain Sandwich Roll',
       'prod.rollFood': 'Plain - Sesame - Potato Sandwich Roll',
       'prod.jumboMkt': 'Sesame Jumbo Sandwich',
