@@ -68,7 +68,7 @@ section{position:relative;}
 .hero h1 span{color:var(--gold-light);}
 .hero p.lead{color:rgba(255,255,255,.92);font-size:clamp(1.02rem,2vw,1.22rem);margin-bottom:30px;max-width:640px;}
 .hero-audience{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
-.hero-audience span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
+.hero-audience > span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);
   border:1px solid rgba(255,255,255,.22);color:var(--white);font-weight:700;font-size:.86rem;padding:9px 16px;border-radius:99px;}
 .hero-audience svg{width:16px;height:16px;color:var(--gold);flex-shrink:0;}
 
@@ -208,7 +208,7 @@ footer .copyright{text-align:center;color:rgba(255,255,255,.45);font-size:.78rem
   .hero h1{font-size:1.9rem;margin-bottom:16px;}
   .hero p.lead{font-size:.98rem;margin-bottom:22px;}
   .hero-audience{gap:8px;margin-bottom:22px;}
-  .hero-audience span{font-size:.78rem;padding:7px 12px;}
+  .hero-audience > span{font-size:.78rem;padding:7px 12px;}
 
   /* generic cta rows stack full-width for easy tapping */
   .cta-row{flex-direction:column;gap:12px;}
