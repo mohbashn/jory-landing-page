@@ -248,7 +248,7 @@ footer .copyright{text-align:center;color:rgba(255,255,255,.45);font-size:.78rem
   .cat-title{margin-bottom:16px;gap:10px;}
   .cat-title .num{width:32px;height:32px;font-size:.95rem;}
   .cat-title h3{font-size:1.28rem;}
-  .prod-grid{gap:14px;}
+  .prod-grid{grid-template-columns:1fr;gap:14px;}
   .prod-img{height:150px;padding:14px;}
   .prod-img img{max-height:120px;}
   .prod-body{padding:14px 16px 16px;}
