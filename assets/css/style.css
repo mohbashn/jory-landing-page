@@ -131,6 +131,8 @@ section{position:relative;}
 .prod-img{background:radial-gradient(circle at 50% 30%, #fff 0%, #FBF1E0 100%);padding:18px;display:flex;
   align-items:center;justify-content:center;height:180px;}
 .prod-img img{max-height:150px;width:auto;object-fit:contain;}
+.prod-img-lg{height:210px;}
+.prod-img-lg img{max-height:190px;}
 .prod-body{padding:16px 18px 20px;border-top:1px solid #F1E4CE;}
 .prod-body h4{font-weight:800;font-size:1rem;margin-bottom:10px;color:var(--ink);}
 .prod-meta{display:flex;flex-direction:column;gap:6px;font-size:.82rem;color:var(--ink-soft);}
@@ -253,6 +255,8 @@ footer .copyright{text-align:center;color:rgba(255,255,255,.45);font-size:.78rem
   .prod-card{width:100%;flex-basis:100%;}
   .prod-img{height:150px;padding:14px;}
   .prod-img img{max-height:120px;}
+  .prod-img-lg{height:190px;}
+  .prod-img-lg img{max-height:160px;}
   .prod-body{padding:14px 16px 16px;}
 
   .proof{padding:52px 0;}
