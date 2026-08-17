@@ -19,7 +19,7 @@ const I18n = (() => {
   const translations = {
     ar: {}, // populated at init() from the DOM
     en: {
-      'hero.title': '<span>Jory Factory</span>.. Your Partner in Baking Success',
+      'hero.title': '<span>Jory Food Industries Factory</span>.. Your Partner in Baking Success',
       'hero.lead': 'We bake <b>more than 100,000 pieces</b> daily using the latest baking technology and consistent quality, with delivery covering every region of the Kingdom.',
       'hero.aud1': 'Wholesale Markets &amp; Supermarkets',
       'hero.aud2': 'Restaurants &amp; Cafés',
